@@ -1,0 +1,153 @@
+/*  Rewards 
+    --------------------------- */
+/*#rewards .product-items .product-item{
+    margin-bottom: 35px;
+    width: 25%;
+}
+
+#rewards .product-items{
+     padding: 0px;   
+}
+
+@media (max-width: 991px) {
+    #rewards .product-items .product-item{
+        width: 33.3%;
+    }
+}
+
+@media (max-width: 767px) {
+    #rewards .product-items .product-item{
+        width: 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    #rewards .product-items .product-item{
+        width: 100%;
+    }
+}*/
+
+/*  Rewards Detail
+--------------------------- */
+#rewardDetail {
+    padding-bottom:30px;
+}
+
+.redeem-btn {
+    padding: 5px 0px 0px;
+    clear: both;
+    text-align: right;
+}
+
+.total-summary {
+    margin-top: 8px;
+}
+
+.summary-total.hidden-xs{
+    display: none;
+}
+
+.summary-total.hidden-xs:first-child{
+    display: block;
+}
+
+#rewardDetail .no-padding{
+    padding-left:0px;
+}
+
+#rewardDetail .total-details {
+    padding: 0px;
+    margin: 20px 0px;
+    text-align: right;
+}
+
+#rewardDetail .pointsAvailable {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#rewardDetail .totalPoints {
+    font-size: 16px;
+}
+
+
+.center{
+    text-align: center;
+}
+#rewardDetail .no-padding {
+    padding: 0px;
+    float: right;
+    text-align: right;
+}
+
+#rewardDetail .total-summary .col-xs-8{
+    width: 100%;
+}
+
+#viewReminders .total-summary .with_txt {
+    line-height: 36px;
+}
+
+.reminder-actions {
+    margin-top: 10px;
+}
+.viewReminders-related {
+    margin-top: 35px;
+}
+.relatedItem {
+    margin: 0 0 35px;
+}
+.related_subitem {
+    margin-bottom: 15px;
+}
+.related-item-name {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.related-sub-item {
+    margin: 0 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.related_subitem-button {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ececec;
+}
+@media(min-width: 768px) {
+    .reference {
+        text-align: right;
+    }
+}
+@media (max-width: 767px) {
+    #viewReminders .total-summary label, #viewReminders .total-summary .with_txt {
+        line-height: 36px;
+    }
+    #viewReminders .total-summary .row .row {
+        margin-bottom:10px;
+    }
+
+    .total-summary {
+		padding: 10px 0;
+		margin: 15px auto;
+		-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	}
+	.total-summary:nth-child(2n) {
+		background: #EAE9E9;
+		background: rgba(234, 233, 233, 0.3);
+		background-color: #EAE9E9;
+		background-color: rgba(234, 233, 233, 0.3);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+	}
+    .viewReminders .total-summary {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

@@ -1,0 +1,209 @@
+<section class="container page-content" id="results">
+    <div class="row">
+        <div class="col-md-3 as-leftBar">
+            <button id="as-filter-expand" class="btn btn-default">Advanced Search Filters <span class="icon-angle-down" data-toggle="collapse" href="#navbar-filters"></span></button>
+            <div class="collapse navbar-collapse" id="navbar-filters">
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header">Applied Filters</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="Filters">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+				
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="PriceRangeGroupName">[Search_Advanced-Facet-Price]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="PriceRange">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="FreeShippingGroupName">[Search_Advanced-Facet-FreeShipping]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="FreeShipping">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="OnSaleGroupName">[Search_Advanced-Facet-OnSale]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="OnSale">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="ManufacturerGroupName">[Search_Advanced-Facet-Manufacturer]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body" id="Manufacturer">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="ReviewAverageGroupName">[Search_Advanced-Facet-Reviews]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="ReviewAverage">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="module mod_bg hidden sidebar-widget">
+                    <h4 class="menu-headers widget-header" id="CategoryGroupName">[Search_Advanced-Facet-Category]</h4>
+                    <div class="clear"></div>
+                    <div class="panel-body widget-body" id="Category">
+                        <ul class="nav nav-pills cat nav-stacked sidebarUL"></ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-9 as-resultsCol">
+            <!--START: CATEGORY_HEADER-->
+            <section class="page_header">
+                <h1 class="page_heading">[CONTENT]</h1>
+            </section>
+            <!--END: CATEGORY_HEADER-->
+
+            <div id="loadimg" class="text-center"><img src="/assets/templates/common-html5/images/loading.gif" /></div>
+            <div id="itemsBlock">
+                <div class="products-header">
+
+                    <span class="pull-left items-total" id="pagesInfo"></span>
+
+                    <div class="sort-by hidden">
+                        <span class="hidden-xs">[Search_Advanced-Sort-By]</span>
+                        <select id="sort-selected" onchange="executeSearch();">
+                            <option value="relevance" data-val="relevance" selected="selected">Relevance</option>
+                            <option value="lowPrice" data-val="lowPrice">Price: Low to High</option>
+                            <option value="highPrice" data-val="highPrice">Price: High to Low</option>
+                            <option value="lowName" data-val="lowName">Name</option>
+                            <option value="highDateCreated" data-val="highDateCreated">Newest</option>
+                            <option value="highReviewAverage" data-val="highReviewAverage">Avg Review</option>
+                            <option value="highFreeShipping" data-val="highFreeShipping">Free Shipping</option>
+                            <option value="highOnSale" data-val="highOnSale">On Sale</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+
+                    <div class="sort-by hidden">
+                        <span class="hidden-xs">[Search_Advanced-Results-Per-Page]</span>
+                        <select id="page-size-selected" onchange="executeSearch();">
+                            <option value="6" data-val="6">6</option>
+                            <option value="12" data-val="12">12</option>
+                            <option value="24" data-val="24" selected="selected">24</option>
+                            <option value="48" data-val="48">48</option>
+                            <option value="96" data-val="96">96</option>
+                            <option value="192" data-val="192">192</option>
+                        </select>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+
+
+                <div class="paging">
+                    <ul id="paggingTop" class="pagination"></ul>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="product-items product-items-3" id="products"></div>
+                <div class="clearfix"></div>
+                <div class="paging">
+                    <ul id="paggingBottom" class="pagination"></ul>
+                </div>
+                <div class="clear"></div>
+
+            </div>
+
+            <!--START: CATEGORY_FOOTER-->
+            <div class="category-header" id="searchFooter">[CONTENT]</div>
+            <!--END: CATEGORY_FOOTER-->
+
+        </div>
+    </div>
+</section>
+
+<div id="productsTemplate" class="hidden">
+    <div class="product-item product-container" data-catalogid="[id]" data-ajaxcart="1" data-addcart-callback="addcart_callback">
+        <div class="img">
+            <a href="product.asp?itemid=[id]">
+                <img src="[THUMBNAIL]" alt="[name]" class="img-responsive" />
+            </a>
+        </div>
+        <div class="name">
+            <a href="product.asp?itemid=[id]">[name]</a>
+        </div>
+
+        <div class="price">
+            <!--START: ITEMPRICE-->
+            <span class="regular-price">[ITEMPRICE]</span>
+            <!--END: ITEMPRICE-->
+        </div>
+
+        <div class="status">
+            <!--START: freeshippingblock-->
+            <span class="freeshipping">[freeshipping]</span>
+            <!--END: freeshippingblock-->
+        </div>
+
+        <div class="reviews">
+            <!--START: product_review-->
+            <!--START: product_review_average-->
+            <span class="reviews-stars rating-[review_average]"></span> <span class="reviews-count">([review_count])</span>
+            <!--END: product_review_average-->
+            <!--END: product_review-->
+        </div>
+
+        <div class="action">
+            <a href="add_cart.asp?quick=1&amp;item_id=[id]" class="add-to-cart btn btn-default">Add To Cart</a>
+        </div>
+    </div>
+</div>
+<div id="paggingTemplate" class="hidden">
+    <nav class="text-center">
+        <ul id="pagination" class="pagination">
+            <li id="previousPage" class="disabled">
+                <a href="#" aria-label="Previous" data-page="[previous]">
+                    <span aria-hidden="true">Previous Page</span>
+                </a>
+            </li>
+            <li id="eachPage"><a class="pagging" href="#" data-page="[page]">[page]</a></li>
+            <li id="nextPage" class="disabled">
+                <a href="#" aria-label="Next" data-page="[next]">
+                    <span aria-hidden="true">Next Page</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<div id="facetsTemplate" class="hidden">
+    <ul class="nav nav-pills cat">
+        <li id="eachFacet" role="presentation"><a href="#" class="facetFilter cat" data-filter="[filter]">[name]<span class="badge pull-right">[hits]</span></a></li>
+    </ul>
+</div>
+<div id="noresultsfound" style="visibility: hidden">[Search_Advanced-No-Results]</div>
+<div id="priceRange" style="visibility: hidden">[Search_Advanced-Price_Range]</div>
+<div id="Search_Advanced-Matches-Found" style="visibility: hidden">[Search_Advanced-Matches-Found]</div>
+<div id="Search_Advanced-Fail" style="visibility: hidden">[Search_Advanced-Fail]</div>
+
+<!--START: template_scripts-->
+<script src="assets/templates/common-html5/js/purl.js"></script>
+<script src="assets/templates/common-html5/js/search_adv.js"></script>
+<script type="text/javascript">
+jQuery(function () {
+	jQuery('#search-button').attr('value', 'Search');
+
+	jQuery('#as-filter-expand').click(function () {
+		jQuery('#navbar-filters').slideToggle();
+	});
+});
+</script>
+<!--END: template_scripts-->
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/search_adv.css" type="text/css" media="screen" />
+<!--END: template_styles-->

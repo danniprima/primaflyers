@@ -1,0 +1,117 @@
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 100% !important;
+    padding: 0;
+}
+</style>
+<script type="text/javascript" src="assets/templates/common-html5/js/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+   $('#productQa_List .button a').addClass('icon-btn icon-btn-close'); 
+});
+</script>
+<!--START: qaScript-->
+<script type="text/javascript">
+
+    function updateQAStats(id, spn, vote) {
+
+        var url = '';
+        var params = '';
+
+        params = 'id=' + id;
+        params += '&vote=' + vote;
+
+        url = 'productqaVote_ajax.asp?' + params + '&no-cache=' + Math.random();
+
+        //window.location = url;
+
+        jQuery.ajax({
+            url: url,
+            dataType: 'html',
+            type: 'GET',
+            cache: false,
+            success: function (strResult) {
+                if (strResult == '') {
+                    alert('[productqa_helpful-notupdated]');
+                }
+                else {
+                    jQuery('#spn' + spn).html(strResult);
+                    alert('[productqa_update-helpful]');
+                }
+
+            },
+            error: reportQAError
+        });
+
+    }
+
+    function reportQAError(jqXHR, textStatus) {
+        if (jqXHR.status > 0) {
+            alert("Error processing request, please try again.");
+            //alert(jqXHR.responseText);
+            //alert(jqXHR.status + " - " + jqXHR);
+        }
+    }
+
+</script>
+<!--END: qaScript-->
+
+<section id="productQa_List">
+
+    <div class="qaBlock">
+		<!--START: qa_list-->
+		<div class="qa_list">
+			<div class="qa_question">
+				<h4 class="q"><strong>[productqa_q]</strong> <span id="question[qa_id]">[question]</span> </h4>
+				<div class="q-author">
+					<em>
+						[productqa_question-submit-by]: <span>[q_user_name]</span>
+						- [q_date_added]
+					</em>
+				</div>
+			</div>
+
+			<!--START: qa_answers-->
+			<div class="qa_answers">
+				<div class="qa_answer"><strong>[productqa_a]</strong> [answer]</div>
+				<!--START: qa_allowratings-->
+				<div class="qa_allowratings">
+					[productqa_answer-helpful]&nbsp;
+					<input type="button" class="btn btnYes btn-default" value="[productqa_helpyes]" onclick="updateQAStats('[ans_id]',[a_id],1)" />
+					<input type="button" class="btn btnNo btn-default" value="[productqa_helpno]" onclick="updateQAStats('[ans_id]',[a_id],-1)" />
+					<em><strong><span id="spn[a_id]">[a_helpful]&nbsp;[productqa_of]&nbsp;[a_votes]</span></strong>&nbsp;[productqa_found-helpful]</em>
+				</div>
+				<!--END: qa_allowratings-->
+				<div class="ans-author"><em>[productqa_answer-submit-by]: <span>[a_user_name] ([a_date_added])</span></em></div>
+			</div>
+			<!--END: qa_answers-->
+
+			<!--START: qa_noanswers-->
+			<div class="qa_noanswers">[productqa_no-answers]</div>
+			<!--END: qa_noanswers-->
+
+				<div class="clear"></div>
+				<!--START: qa_allowuserresponse-->
+				<div class="button text-right">
+					<a href="#" class="qa-answer-btn btn btn-default" data-question="[qa_id]">[productqa_submit-answer] <span class="icon-angle-right"></span></a>
+				</div>
+				<!--END: qa_allowuserresponse-->
+			<div class="clear"></div>
+		</div>
+		<!--END: qa_list-->
+	</div>
+
+      <!--START: errorMsg-->
+      <div class="errorMsg pad10 boxShadow">[errorMsg]
+        <div class="review-close-button">
+          <input type="button" value='Click here to continue' class="btn" onclick="history.back(1);" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+        </div>
+      </div>
+      <!--END: errorMsg--> 
+</section>
+
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/listing.css" type="text/css" media="screen" />
+<!--END: template_styles-->

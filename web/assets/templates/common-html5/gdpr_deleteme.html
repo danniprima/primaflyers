@@ -1,0 +1,201 @@
+<!--START: REQUEST-SECTION-->
+<section id="gdpr-request-report">
+        
+	<form action="gdpr_deleteme.asp?action=newrequest" method="post" name="form1" id="form1">		
+		<h1 class="page_headers">[gdpr_header-delete-data]</h1>
+		
+        <div class="row">
+            <div id="error-msg" class="error" style="display:none">                
+                <i class="fa-fw fa fa-warning"></i> <span id="error-info"></span>                
+            </div>
+            <div id="info-msg" style="display:none">            
+                <span id="msg-info"></span>
+            </div>
+        </div>
+        
+        <!--START: REQUEST_DATA_FORM-->
+
+        <!--START: CATEGORY_HEADER-->
+		<div class="category-header" id="dataDeleteHeader">[CONTENT]</div>
+		<!--END: CATEGORY_HEADER-->       
+        
+		<div class="gdpr-section">
+			<div class="header">
+				<h3>[gdpr_subheader-email]</h3>
+			</div>
+			<div class="loginField">				
+				<input type="text" size="25" name="email" id="email" maxlength="100" tabindex="1" class="txtBoxStyle" />				
+				<div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" /></div>				
+				<div class="clear"></div>
+			</div>			
+		</div>
+
+		<!--START: form-error-message-->
+		<div class="error">[formErrorMessage]</div>
+		<!--END: form-error-message-->
+	
+		<div class="gdpr-section">
+			<!--START: captcha-->
+			<div class="header">
+				<h3>[gdpr_subheader-verification]</h3>
+			</div>
+			<div class="loginField">				
+				<div class="captcha">
+					<img src="admin/image_pw.asp" width="148" />
+					<div class="captcha-text">[registration_verification_message]</div>
+					<input type="text" name="randomWord" id="randomWord" autocomplete="off" value="" size="25" maxlength="30" tabindex="15" class="txtBoxStyle" />
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--END: captcha-->
+			<!--START: recaptcha-->
+			<div class="header">
+				<h3>[registration_verification]</h3>
+			</div>
+			<div class="loginField">
+				<div class="recaptcha">
+					<script type="text/javascript">var RecaptchaOptions = { theme: '[recaptcha_theme]' };</script>
+					<script type="text/javascript" src="//www.google.com/recaptcha/api/challenge?k=[recaptcha_key]"></script>
+					<noscript>
+						<iframe src="//www.google.com/recaptcha/api/noscript?k=[recaptcha_key]" height="300" width="500" frameborder="0"></iframe><br>
+						<textarea name="recaptcha_challenge_field" rows="3" cols="40"></textarea>
+						<input type="hidden" name="recaptcha_response_field" value="manual_challenge">
+					</noscript>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--END: recaptcha-->
+			<!--START: recaptcharobot-->
+			<script type="text/javascript">
+				var onSubmit = function (token) {
+					if ('[recaptcha_robot_size]' == 'invisible')
+					    if (ValidateForm(document.form1)) {						    
+					        submitFormPos();
+						}
+						else
+							grecaptcha.reset();
+				}
+				var onloadCallback = function () {
+					grecaptcha.render('[recaptcha_control]', {
+						'sitekey': '[recaptcha_key]',
+						'theme': '[recaptcha_robot_theme]',
+						'size': '[recaptcha_robot_size]',
+						'type': '[recaptcha_robot_type]',
+						'callback': onSubmit
+					});
+				}
+			</script>
+			<script src="//www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
+			<div id="divRobocop"></div>
+			<div class="loginField">
+				<!--START: verificationlabel--><label for="recaptcha_challenge_field">Verification:</label><!--END: verificationlabel-->&nbsp;
+			</div>
+			<div class="clear"></div>
+			<!--END: recaptcharobot-->
+		</div>
+        <div class="clear"></div>
+        <div class="gdpr-section">
+            <div class="error-img"><img src="assets/templates/common/images/error2.gif" width="12" height="12" alt="" /></div> = Required
+        </div>
+        <div class="clear"></div>
+		<div class="gdpr-section">
+			<script>
+				function submitted_onclick() {
+					if ('[recaptcha_robot_size]' == 'invisible')
+						return true;
+					else {
+						if (ValidateForm(document.form1)) {						       
+						    submitFormPos();
+						}
+						return false;
+					}
+				}
+			</script>
+			<button type="button" id='submitted' name="submitted" class="btn" onclick="return submitted_onclick();"><i class="icon-ok"></i> [gdpr_submit-button]</button>
+		</div>
+		<div class="clear"></div>
+        
+		<!--START: CATEGORY_FOOTER-->
+		<div class="category-footer" id="dataDeleteFooter">[CONTENT]</div>
+		<!--END: CATEGORY_FOOTER-->
+
+        <!--END: REQUEST_DATA_FORM-->        
+	</form>
+    
+
+    <!--START: CONFIRM-MSG-->
+    <form action="gdpr_deleteme.asp?action=update" method="post" name="form2" id="form2">
+        <input type="hidden" id="key" name="key" value="[key]" />
+        <h3>[DATA_DELETE-CONFIRMATION-MSG]</h3>
+        <button type="button" id='btn1' name="btn1" class="btn" onclick="ConfirmRequest()"><i class="icon-ok"></i> Accept</button>
+    </form>
+    <!--END: CONFIRM-MSG-->
+
+</section>
+<!--END: REQUEST-SECTION-->
+
+<script type="text/javascript">   
+    function ValidateForm(objForm) {
+        var strMsg = "";
+
+        if (objForm.email.value.trim() == "" || !validateEmail(objForm.email.value.trim()))
+            strMsg += " - Please enter a valid email.\n";
+
+        if (objForm.email.value.length > 100)
+            strMsg += " - Max length for email is 50.\n";
+
+        if (objForm.randomWord && objForm.randomWord.value.trim() == "")
+            strMsg += " - Please enter the verification.\n";
+
+        if (strMsg != "") {
+            alert(strMsg);
+            return false;
+        }
+        return true;
+	}   
+    function submitFormPos() {
+        objForm = document.form1;
+        objForm.submit();
+        return;        
+    }
+    function ConfirmRequest() {
+        objForm = document.form2;
+        objForm.submit();
+        return;
+    }
+    function ShowErrorMsg(error) {
+        jQuery("#error-info").html(error);
+        jQuery("#error-msg").show().delay(20000).fadeOut();
+    }
+    function ShowInfoMsg(message) {
+        jQuery("#msg-info").html(message);
+        jQuery("#info-msg").show();
+    }   
+</script>
+<style>
+    #gdpr-request-report .gdpr-section {
+	    margin-bottom: 15px;
+        margin-top: 15px;
+    }
+    #gdpr-request-report .required {
+	    margin: 10px 0 0 85px;
+    }
+    #gdpr-request-report .required .error-img {
+        line-height: normal !important;
+    }
+    #gdpr-request-report .submit-button {
+	    margin: 10px 0 0 85px;
+    }
+
+    #gdpr-request-report h1 {
+	    margin-bottom: 15px;
+    }
+    #gdpr-request-report h3 {
+	    font-size: 130%;
+	    line-height: 1.8em;
+    }
+    #gdpr-request-report .header {
+	    border-bottom: 1px solid #d2d2d2;
+	    margin: 0 0 10px;
+    }
+</style>

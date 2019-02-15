@@ -1,0 +1,399 @@
+@import 'https://fonts.googleapis.com/icon?family=Material+Icons';
+.material-icons {
+	font-family: 'Material Icons';
+	font-weight: normal;
+	font-style: normal;
+	font-size: 20px;  /* Preferred icon size */
+	display: inline-block;
+	line-height: 1;
+	text-transform: none;
+	letter-spacing: normal;
+	word-wrap: normal;
+	white-space: nowrap;
+	direction: ltr;
+	/* Support for all WebKit browsers. */
+	-webkit-font-smoothing: antialiased;
+	/* Support for Safari and Chrome. */
+	text-rendering: optimizeLegibility;
+	/* Support for Firefox. */
+	-moz-osx-font-smoothing: grayscale;
+	/* Support for IE. */
+	font-feature-settings: 'liga';
+}
+
+.buy-content {
+	background: #FFF;
+	padding: 10px;
+	position: relative;
+	margin: 0 auto;
+}
+.buy-content .buy-content-image {
+	max-width: 100%;
+	min-height: 170px;
+	position: relative;
+	margin-bottom: 10px;
+	text-align: center;
+}
+.buy-content .buy-content-image img {
+	display: block;
+	max-height: 100%;
+	max-width: 150px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.buy-content .buy-content-image a,
+.buy-content .buy-content-image a:visited {
+	border: 0;
+	text-decoration: none;
+}
+.buy-content .buy-content-itemname {
+	margin-bottom: 10px;
+}
+.buy-content .buy-content-itemprice {
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+button.buy-content-buybtn {
+	border: none;
+	font-weight: 400;
+	font-size: 12px;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 0;
+	padding: 9px 14px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	position: relative;
+	max-width: 100%;
+}
+button.buy-content-buybtn:hover {
+	border: none;
+	background: #CCC;
+	font-weight: 400;
+	font-size: 12px;
+	color: #333;
+	text-transform: uppercase;
+	cursor: pointer;
+	margin: 0;
+	padding: 9px 14px;
+	-webkit-appearance: none;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	position: relative;
+	max-width: 100%;
+}
+.buy-content-buybtn span {
+	display: block;
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+i.w-checkmark {
+	display: block;
+	position: absolute;
+    left: 45%;
+    top: 10%;
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+i.w-checkmark:after {
+	content: '';
+	display: block;
+    width: 5px;
+    height: 14px;
+	border: solid transparent;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.buy-content-buybtn.animate span {
+	color: transparent;
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.buy-content-buybtn.animate i.w-checkmark {
+	border: solid #FFF;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.buy-content-buybtn.animate i.w-checkmark {
+	border: solid #FFF;
+	border-width: 0 3px 3px 0;
+	transform: rotate(45deg);
+	-webkit-transition:all 0.15s ease-in-out;
+	transition:all 0.15s ease-in-out;
+}
+.buy-content .buy-content-status {
+    font-size: 11px;
+    margin: 5px 0;
+}
+.buy-content .buy-content-option {
+	margin-bottom: 10px;
+}
+.buy-content .buy-content-option label {
+	width: 100%;
+	display: block;
+}
+.buy-content .buy-content-option select {
+	width: 100%;
+}
+
+/* DEFAULT */
+.buy-content.default {
+	width: 250px;
+}
+
+
+#divBuyContentCart {     
+	font-family: 'Open Sans', sans-serif; 
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    z-index: 2147483645;
+	background: #FFF;
+    width: 400px;
+    height: 100%;
+	border: none;
+	background: #FFF;
+	-moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+#divBuyContentCart .widget-item-qty {
+	float:left;
+	width: 220px;
+	padding: 5px 5px 5px 5px;
+	position: relative;
+	float: left;
+}
+#divBuyContentCart .buy-content-image img {
+	width: 50px;
+	height: 50px;
+	position:relative;
+	padding: 5px 5px 5px 5px;
+	float: left;
+}
+#divBuyContentCart .buy-content-qty {
+	width: 25px;
+	position: relative;
+	margin: 2px 10px 2px 10px;
+	float: left;
+	text-align:right;
+}
+#divBuyContentCart .buy-content-price {
+	height:50px;
+	width: 55px;
+	position: relative;
+	padding: 5px 5px 5px 5px;
+	float: left;
+	text-align:right;
+	vertical-align:baseline;
+}
+.buy-content-header {
+	width: 250px;
+	position: relative;
+	padding: 15px 5px 5px 5px;
+	float: left;
+	font-family: Arial, Verdana, Calibri;
+	font-size: 2em;
+	font-weight: bold;
+}
+.buy-content-close {
+	margin-top: 8px;  float: right;
+	vertical-align:middle;
+	text-align: center;
+	border: none;
+	font-size: 21px;
+	background-color: #fff;
+}
+#divBuyContentCart .widget-top {
+	padding: 20px;
+	position: relative;
+	z-index: 2;
+}
+#divBuyContentCart .widget-top h3 {
+	float: left;
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: normal;
+}
+#divBuyContentCart .widget-top button,
+#divBuyContentCart .widget-top button:hover {
+	font-size: 3em;
+	color: #333;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: transparent;
+	border: none;
+	position: absolute;
+	right: 20px;
+    top: 13px;
+	cursor: pointer;
+	padding: 0;
+	-ms-transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+#divBuyContentCart .widget-cart-form {
+	position: absolute;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    top: 0;
+    padding: 60px 0 100px;
+}
+#divBuyContentCart .widget-items-container {
+	height: 100%;
+	box-sizing: border-box;
+	overflow: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	position: relative;
+	padding-top: 0;
+	-webkit-perspective: 400px;
+	perspective: 400px;
+	-webkit-perspective-origin: 50% 0px;
+	perspective-origin: 50% 0px;
+}
+#divBuyContentCart .widget-lineitem {
+	margin-bottom: 15px;
+}
+#divBuyContentCart .widget-bottom {
+	position: absolute;
+    bottom: 0;
+    padding: 15px;
+	width: 100%;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+#divBuyContentCart .widget-cart-total span.widget-total-txt {
+	font-size: 12px;
+	display: block;
+	float: left;
+	padding: 0 0 1.5em;
+}
+#divBuyContentCart .widget-cart-total span.widget-total-amt {
+	font-size: 16px;
+	display: block;
+	float: right;
+	padding: 0 0 1.5em;
+}
+#divBuyContentCheckoutButton {
+	padding: 4px 8px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	color: #FFF;
+	-webkit-transition: all 200ms ease;
+	transition: all 200ms ease;
+	font-size: 16px;
+	max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	line-height: 20px;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	background: #333;
+	display: block;
+	width: 100%;
+	padding: 10px 5px;
+}
+#divBuyContentCheckoutButton:hover {
+	text-transform: none;
+}
+#divBuyContentCartButton i {
+	color: #FFF;
+}
+.clear {
+	clear: both;
+}
+
+#page-wrap {
+  width: 500px;
+  margin: 100px auto;
+}
+.widget-qty {
+	margin: 10px 0 0;
+}
+.widget-cart-qty {
+	width: 30px;
+	height: 20px;
+	float: left;
+	margin-left: 0;
+	text-align: center;
+	border: 1px solid #333;
+	font-size: 12px;
+}
+.widget-cart-incr {
+	margin: 0;
+	cursor: pointer;
+  width: 30px;
+	height: 20px;
+  float: left;
+	border: 1px solid #333;
+	border-left: none;
+  text-align: center;
+	font-size: 20px;
+	border-radius: 3px;
+	line-height: 17px;
+	border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+.widget-cart-decr {
+	margin: 0;
+  cursor: pointer;
+  width: 30px;
+	height: 20px;
+  float: left;
+	border: 1px solid #333;
+	border-right: none;
+  text-align: center;
+  font-size: 20px;
+	border-radius: 3px;
+	line-height: 17px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.buy-content-cart-button {
+    position: fixed;
+    right:0px;
+    top: 50%;
+    z-index: 2147483645;
+    background-color:#00AA00;
+    min-width: 40px;
+    min-height: 60px;
+    text-align: center;
+    cursor:pointer;
+    border-radius: 3px 0 0 3px;
+}
+
+.buy-content-cart-button:hover {
+    background-color:#006600;
+}
+
+.buy-content-cart-button-qty {
+    margin-top: 5px;
+    color: white;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 468px) {
+	#divBuyContentCart {
+		width: 100%;
+	}
+}
+

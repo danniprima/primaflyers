@@ -1,0 +1,58 @@
+  <div class="page_headers">Please Log In</div>
+  
+  <!--START: BODY_HEADER-->
+  <div class="page_crumbs"><a href="http://www.primaflyers.com">[frame_breadcrumb-home]</a> > <a href="myaccount.asp">My Account</a></div>
+  <!--END: BODY_HEADER-->
+  
+  <div class="page_text">
+  
+    <!--START: error_message-->
+    <div class="rounded" style="border: 1px solid #cc0000; padding: 15px;">
+	  [error_message]
+    </div>
+	<br style="clear: both;" />
+    <!--END: error_message-->
+
+    <form action="login.asp?ordertracking=[otrack]" method="post">
+      <p class="checkout-headers" style="padding-bottom: 8px;">[login_Header-login]</p>
+      <div class="rounded" style="border: 1px solid #dddddd; width: 400px; padding: 10px;">
+        <p class="item" style="padding-bottom: 8px;">[login_Header-loginmessage]</p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[CustomerInfo_email]<br /><input type="text" name="email" value="[email]" class="txtBoxStyle" style="width: 99%;margin-top: 4px;"></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[CustomerInfo_password]<br /><input type="password" autocomplete="off" name="password" class="txtBoxStyle" id="Password1" style="width: 99%;margin-top: 4px;"></strong></p>
+        <!--START: captcha-->
+        <p class="item" style="padding-bottom: 8px;">
+          <strong>[registration_verification]</strong><br />
+          <img src="admin/image_pw.asp?cache=[now]" border="0" width="148">
+          <br />
+		  [registration_verification_message]
+          <br />
+		  <input type="text" name="randomWord" id="randomWord" autocomplete="off" value="" size="25" maxlength="30" class="txtBoxStyle">
+        </p>
+		<!--END: captcha-->
+        <p align="right"><input type="submit" value="Log In" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit1" name="Submit1"></p>
+      </div>
+      <input type="hidden" name="catalogid" value="[catalogid]">
+    </form>
+    
+    <br />
+
+    <form action="login.asp?action=forgotpass&ordertracking=[otrack]" method="post">
+      <p class="checkout-headers" style="padding-bottom: 8px;">[registration_Header-createnewaccount]</p>
+      <div class="rounded" style="border: 1px solid #dddddd; width: 400px; padding: 10px;">
+        <p class="item" style="padding-bottom: 8px;">[registration_create-account]</p>
+        <p align="right"><input type="button" value="Create" class="btn" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" onclick="window.location='register.asp?cg=0';"></p>
+      </div>
+    </form>
+        
+    <br />
+       
+    <form action="login.asp?action=forgotpass&ordertracking=[otrack]" method="post">
+      <p class="checkout-headers" style="padding-bottom: 8px;">[login_Header-forgotpassword]</p>
+      <div class="rounded" style="border: 1px solid #dddddd; width: 400px; padding: 10px;">
+        <p class="item" style="padding-bottom: 8px;">To reset your password, enter your email address below and click 'Reset'. We will email you with a link to then reset your password.</p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[CustomerInfo_email]<br /><input type="text" name="email" value="[email]" class="txtBoxStyle" style="width: 99%;margin-top: 4px;"></strong></p>
+        <p align="right"><input type="submit" value="Reset" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" id="Submit2" name="Submit2"></p>
+      </div>
+    </form>
+
+  </div>

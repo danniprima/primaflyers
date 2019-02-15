@@ -1,0 +1,16 @@
+  <form method="post" action="[dberror_returnpage]">
+  <div class="page_headers">Oops!</div>
+  <div class="page_crumbs"><a href="http://www.primaflyers.com">[frame_breadcrumb-home]</a> > <a href="">[dberror_name]</a></div>
+
+  <div class="page_text">
+
+    <p class="checkout-headers" style="padding-bottom: 8px;">[dberror_name]</p>
+    <div class="rounded" style="border: 1px solid #dddddd; width: 400px; padding: 10px;">
+      <p class="item" style="padding-bottom: 8px;">[dberror]</p>
+      <p align="right">
+        <!--START: RETURNMESSAGE-->
+		  <input type="button" value='[error_returnmessage]' class="btn" onClick="location.href='[dberror_returnpage]';" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'">
+	    <!--END: RETURNMESSAGE-->
+      </p>
+    </div>
+  </div>

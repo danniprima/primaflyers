@@ -1,0 +1,380 @@
+  <div class="page_headers">[account_header-myaccount]</div>
+  <div class="page_crumbs"><a href="http://www.primaflyers.com">Home</a> > <a href="http://www.primaflyers.com/myaccount.asp">My Account</a></div>
+  <div class="page_text">
+    <div style="float: left; width: 550px;">
+      <span style="float: left; width: 460px;">
+        <b>[account_welcome]
+        <!--START: username-->
+        [username]</b><br />
+        <small>If you're not [username], </small><a href="logout.asp"><span class="item">click here</span></a></span>
+        <!--END: username-->
+      </span>
+      <span style="float: right; width: 60px; text-align: right;">
+        <input name="logout" type="button" class="btn" onclick="window.location='logout.asp';" value="Logout" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" />
+      </span>
+    </div>
+    
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+    
+    <div style="float: left; width: 265px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers">[account_billing-info]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="myaccount.asp?action=updacc"><small>Update Address</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <p class="item" style="padding: 8px 0px 4px 8px;">[billing_firstname] [billing_lastname]</p>
+        <p class="item" style="padding: 0px 0px 4px 8px;">[billing_address]</p>
+        <p class="item" style="padding: 0px 0px 4px 8px;" id="billing_add2">[billing_address2]</p>
+        <p class="item" style="padding: 0px 0px 14px 8px;">[billing_city], [billing_state] [billing_zip]</p>
+        <p class="item" style="padding: 0px 0px 8px 8px;">Phone: [billing_phone]</p>
+      </div>
+    </div>
+    <script type="text/javascript" language="javascript">if($("#billing_add2").html() == "") { $("#billing_add2").remove(); };</script>
+    
+    <div style="float: right; width: 265px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers">[account_shipping-info]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="myaccount.asp?action=updacc"><small>Update Address</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <p class="item" style="padding: 8px 0px 4px 8px;">[shipping_firstname] [shipping_lastname]</p>
+        <p class="item" style="padding: 0px 0px 4px 8px;">[shipping_address]</p>
+        <p class="item" style="padding: 0px 0px 4px 8px;" id="shipping_add2">[shipping_address2]</p>
+        <p class="item" style="padding: 0px 0px 14px 8px;">[shipping_city], [shipping_state] [shipping_zip]</p>
+        <p class="item" style="padding: 0px 0px 8px 8px;">Phone: [shipping_phone]</p>
+      </div>
+    </div>
+    <script type="text/javascript" language="javascript">if($("#shipping_add2").html() == "") { $("#shipping_add2").remove(); };</script>
+    
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+    
+    <div style="float: left; width: 550px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers"><img src="assets/templates/common/images/gift_viewaccount.png" width="13" height="14" border="0" align="absbottom" />&nbsp;Recent Orders</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="ordertracking.asp"><small>View All Orders</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		  <tr>
+		    <td class="titles2" style="padding-left: 8px;" width="80">[orderhistory_date]</td>
+		    <td class="titles2" width="100">[orderhistory_ordernum]</td>
+		    <td class="titles2" width="100">[orderhistory_amount]</td>
+		    <td id="pw_status" class="titles2" width="100">[orderhistory_status] <div class="pw_orders"></div></td>
+		    <td class="titles2" width="150"></td>
+		  </tr>
+		  <!--START: ordertemplate-->
+		  <tr>
+		    <td class="item item2" style="padding-left: 8px;">[odate]</td>
+		    <td class="item item2">[invoicenum_prefix][invoicenum]</td>
+		    <td class="item item2">[orderamount]</td>
+		    <td class="item item2">[orderstatus]</td>
+		    <td class="item item2">[<a href="ordertracking.asp?action=repeat&id=[orderid]" onclick="alert('Note: you must re-upload any files associated with this re-order!');"><small>Re-order</small></a>]&nbsp;&nbsp;&nbsp;[<a href="ordertracking.asp?action=view&amp;id=[orderid]"><small>[account_view-details]</small></a>]</td>
+		  </tr>
+	 	  <!--END: ordertemplate-->
+	    </table>
+      </div>
+    </div>
+    
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+
+	<!--START: recurringOrders-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" id="Table5">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/gift_viewaccount.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers" align="left">[recurringorders_recurringorders-header]&nbsp;</td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td align="left" colspan="2"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="alternative">
+				<tr>
+					<td class="titles2" width="80">[orderhistory_date]</td>
+					<td class="titles2" width="150">[orderhistory_ordernum]</td>
+					<td class="titles2" width="100">[orderhistory_amount]</td>
+					<td class="titles2" width="100">[orderhistory_status]</td>
+					<td class="titles2" width=""></td>
+				</tr>
+				<!--START: recurringordertemplate-->
+				<tr>
+					<td class="item">[odate]</td>
+					<td class="item">[invoicenum_prefix][invoicenum]&nbsp;(<a href="ordertracking.asp?action=view&amp;id=[orderid]">[account_view-details]</a>)</td>
+					<td class="item">[orderamount]</td>
+					<td class="item">[orderstatus]</td>
+					<td class="item"></td>
+				</tr>
+				<!--END: recurringordertemplate-->
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<!--END: recurringOrders-->
+    
+	<!--START: authNetCIM-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" id="Table3">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/gift_edit.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers">[account_my-saved-creditcards]</td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" class="alternative" border="0">
+				<tr>
+					<td class="titles2" width="80">[checkout3_creditcard-last-digits]</td>
+					<td class="titles2" width="80">[CustomerInfo_creditexpiration]</td>
+					<td class="titles2" ></td>
+				</tr>
+				<!--START: ccItem-->
+				<tr class="alternative">
+					<td class="item" align="center">[ccLastDigits]</td>
+					<td class="item" align="center">[ccExpiration]</td>
+					<td class="item"><a href="managemycc.asp?pp=[strCustomerPaymentProfileId]">[account_view-details]</a> </td>
+				</tr>
+				<!--END: ccItem-->
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2">&nbsp;</td>
+	</tr>
+	<!--END: authNetCIM-->
+    
+    <div style="float: left; width: 550px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers"><img src="assets/templates/common/images/gift_edit.png" width="13" height="14" border="0" align="absbottom" />&nbsp;[account_addressbook]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="myaccount.asp?action=addresses"><small>Manage Addresses</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		  <tr>
+		    <td class="titles2" style="padding-left: 8px;" width="120">[account_addressbook-header-alias]</td>
+		    <td class="titles2" align="left">[account_addressbook-header-details]</td>
+		  </tr>
+		  <!--START: address_book-->
+		  <tr>
+		    <td valign="top" class="item item2" style="padding-left: 8px;">[address_alias]</td>
+		    <td class="item item2">[shipping_address]<br />[shipping_city], [shipping_state] [shipping_zip]</td>
+		  </tr>
+	 	  <!--END: address_book-->
+	    </table>
+      </div>
+    </div>
+    
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+
+	<!--START: CRM-->
+    <div style="float: left; width: 550px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers"><img src="assets/templates/common/images/question.png" width="13" height="14" border="0" align="absbottom" />&nbsp;[account_crm-requests]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="crm.asp?action=add"><small>[account_crm-add-request]</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		  <tr>
+            <td class="titles2" style="padding-left: 8px;" width="80">[account_crm-requests-header-id]</td>
+			<td class="titles2" width="100">[account_crm-requests-header-dept]</td>
+			<td class="titles2" width="100">[account_crm-requests-header-date]</td>
+			<td class="titles2" width="150">[account_crm-requests-header-subject]</td>
+			<td class="titles2" width="100">[account_crm-requests-header-lastact]</td>
+		  </tr>
+          <!--START: crmMessagesDetailNoReq-->
+		  <tr>
+			<td class="item item2" style="padding-left: 8px;" colspan="5">[account_crm-requests-norequest]</td>
+		  </tr>
+		  <!--END: crmMessagesDetailNoReq-->
+          <!--START: crmMessagesDetail-->
+		  <tr>
+			<td class="item item2" style="padding-left: 8px;"><a href="crm.asp?mk=[mkey]">[crmId]</a></td>
+			<td class="item item2">[dpt]</td>
+			<td class="item item2">[date]</td>
+			<td class="item item2">[subject]</td>
+			<td class="item item2">[lastaction]</td>
+		  </tr>
+		  <!--END: crmMessagesDetail-->
+	    </table>
+      </div>
+    </div>
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+    <!--END: CRM-->
+
+
+	<!--START: RMA-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/rma.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers">[account_rma-header]</td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" class="alternative" border="0">
+				<tr class="alternative">
+					<td valign="top" class="titles2" width="80">[rma_header-rmanum]</td>
+					<td valign="top" class="titles2" width="100">[rma_header-rmadate]</td>
+					<td valign="top" class="titles2" width="100">[rma_header-rmaorder]</td>
+					<td valign="top" class="titles2" width="100">[rma_header-rmastatus]</td>
+				</tr>
+				<!--START: RmaItems-->
+				<tr class="alternative">
+					<td valign="top" class="item"><a href="my_rma.asp?oid=[OrderId]&amp;r=[idRma]" class="small">[idRma]</a></td>
+					<td valign="top" class="item">[Date]</td>
+					<td valign="top" class="item">[OrderNum]</td>
+					<td valign="top" class="item">[RMAStatus]</td>
+				</tr>
+				<!--END: RmaItems-->
+			</table>
+			<br>
+		</td>
+	</tr>
+	<!--END: RMA-->
+    
+	
+	<!--START: affiliateStatistics-->
+    <div style="float: left; width: 550px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers"><img src="assets/templates/common/images/affiliate.png" width="16" height="14" border="0" align="absbottom" />&nbsp;[account_affiliate-statistics]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="affiliate.asp"><small>[account_view-details]</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		  <tr>
+            <td class="titles2" style="padding-left: 8px;">[affiliate_summary-header-membersince]</td>
+			<td class="titles2" width="80" align="center">[affiliate_summary-header-orders]</td>
+			<td class="titles2" width="80" align="center">[affiliate_summary-header-amount]</td>
+			<td class="titles2" width="80" align="center">[affiliate_summary-header-commission]</td>
+			<td class="titles2" width="80" align="center">[affiliate_summary-header-paid]</td>
+            <td class="titles2" width="80" align="center">[affiliate_summary-header-balance]</td>
+		  </tr>
+          <!--START: affiliateStatisticsNoOrders-->
+		  <tr>
+			<td class="item item2" style="padding-left: 8px;" colspan="6">[affiliate_no-history-to-display]</td>
+		  </tr>
+		  <!--END: affiliateStatisticsNoOrders-->
+          <!--START: affiliateStatisticsDetail-->
+		  <tr>
+			<td class="item item2" style="padding-left: 8px;">[memberSince]</td>
+			<td class="item item2" align="center">[orders]</td>
+			<td class="item item2" align="center">[amount]</td>
+			<td class="item item2" align="center">[totalCommission]</td>
+			<td class="item item2" align="center">[paid]</td>
+			<td class="item item2" align="center">[balance]</td>
+		  </tr>
+		  <!--END: affiliateStatisticsDetail-->
+	    </table>
+      </div>
+    </div>
+    <div style="display: block; height: 20px; min-height: 20px; clear: both;">&nbsp;</div>
+    <!--END: affiliateStatistics-->
+    
+    
+    <!--TEST-->
+
+
+	
+    
+	<!--START: giftRegistry-->
+	<tr>
+		<td class="checkout-headers" colspan="2"><img src="assets/templates/common/images/gift_add.png" border="0" align="absbottom" />[account_giftRegistry]</td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="4" cellspacing="0" class="alternative" border="0">
+				<tr>
+					<td class="titles2">[giftregistry_header-name]</td>
+					<td class="titles2" align="center">[giftregistry_header-eventdate]</td>
+					<td class="titles2" align="center">[giftregistry_header-expiration]</td>
+					<td class="titles2" align="center">[giftregistry_header-productsdesired]</td>
+					<td class="titles2" align="center">[giftregistry_header-productspurchased]</td>
+				</tr>
+				<tr class="alternative">
+					<td valign="top" class="item" >[regName] &nbsp; <a href="giftregistry_edit.asp?action=view">[account_view-details]</a></td>
+					<td valign="top" class="item" align="center">[regEvent]</td>
+					<td valign="top" class="item" align="center">[regExpiration]</td>
+					<td valign="top" class="item" align="center">[regProductsDesired]</td>
+					<td valign="top" class="item" align="center">[regProductsPurchased]</td>
+				</tr>
+			</table>
+			<br>
+		</td>
+	</tr>
+	<!--END: giftRegistry-->
+    
+	<!--START: points-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/rewards.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers">[account_rewards]&nbsp;<a href="reward_detail.asp">[account_view-details]</a>&nbsp;&nbsp;<a href="redeem.asp">Redeem</a></td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="4" cellspacing="0" border="0" class="alternative">
+				<tr>
+					<td valign="top" class="item" width="100%">[account_rewards-header-points]: 
+						[points_balance]</td>
+				</tr>
+			</table>
+			<br>
+		</td>
+	</tr>
+	<!--END: points-->
+    
+	<!--START: wishList-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/gift_view.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers">[account_wishlist]&nbsp;<a href="view_wishlist.asp">[account_view-details]</a></td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="4" cellspacing="0" border="0" class="alternative">
+				<tr>
+					<td valign="top" class="item" width="100%" colspan="2"> [account_wishlist-header-products]: [wishListTotalItems]<br>
+						[account_wishlist-header-lastmod]: [wishListLasMod] </td>
+				</tr>
+			</table>
+			<br>
+		</td>
+	</tr>
+	<!--END: wishList-->
+    
+	<!--START: reminders-->
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="0" cellspacing="0" ID="Table1">
+				<tr>
+					<td class="checkout-headers" width="25"><img src="assets/templates/common/images/reminders.png" border="0" align="absbottom" /></td>
+					<td class="checkout-headers">[account_reminders]&nbsp;<a href="view_reminders.asp">[account_view-details]</a></td>
+				</tr>
+			</table></td>
+	</tr>
+	<tr>
+		<td colspan="2"><table width="100%" cellpadding="4" cellspacing="0" border="0" class="alternative" ID="Table2">
+				<tr>
+					<td valign="top" class="item" width="100%" colspan="2"> [account_reminders-header-reminders]: [total_reminders]</td>
+				</tr>
+			</table>
+			<br>
+		</td>
+	</tr>
+	<!--END: reminders-->
+	
+	<!--START: giftcertificates-->
+    <div style="float: left; width: 550px;">
+      <p style="padding-bottom: 8px;"><span class="checkout-headers"><img src="assets/templates/common/images/gift_certificate.png" width="17" height="18" border="0" align="absbottom" />&nbsp;[account_gift-certificate]</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="gc_view.asp"><small>[account_view-details]</small></a></p>
+      <div class="rounded account-info" style="border: 1px solid #dddddd; width: 100%;">
+        <form action="gc_balance.asp" method="post" name="frmGC" id="frmGC">
+          <table border="0" cellpadding="0" cellspacing="0" width="100%">
+		    <tr>
+              <td valign="top" class="titles2" style="padding-left: 8px;" width="100%" colspan="2">
+				[account_gift-certificate-total-purchased]: [total_gc],
+				[account_gift-certificate-total-amount]: [total_gcamount] 
+			  </td>
+            </tr>
+            <tr>
+			  <td class="item item2" style="padding-left: 8px;" width="200">[account_gift-certificate-check-balance]:</td>
+			  <td class="item item2"><input type="text" size="20" name="gc" value="" maxlength="30" class="txtBoxStyle" /></td>
+			</tr>
+            <tr>
+			  <td class="item item2" style="padding-left: 8px;" valign="top">[registration_verification]:</td>
+			  <td class="item item2"><img src="admin/image_pw.asp?cache=[now]&sessionname=randomWordGC" border="0" width="148"> <br />
+				[registration_verification_message]<br />
+				<input type="text" name="randomWord" id="randomWord" value="" size="20" maxlength="30" class="txtBoxStyle" />
+				<input name="logout" type="button" class="btn" onclick="this.form.submit();" value="[account_gift-certificate-check-balance-go]" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'" ID="Button1" />
+			  </td>
+			</tr>
+          </table>
+        </form>
+      </div>
+    </div>
+	<!--END: giftcertificates-->
+
+</table>
+
+<!--TEST-->

@@ -1,0 +1,142 @@
+  <script>
+	var addReplyClick = 0;
+	
+	function submitFormContactUs(strAction)
+	{	
+		document.frmForm.action.value = strAction;
+		document.frmForm.submit();
+	}
+	function addNew()
+	{
+		var strMsg = "";
+		if (document.frmForm.customer.value.trim() == "")
+			strMsg += " - [crm_name] cannot be blank.\n";
+		if (document.frmForm.custemail.value.trim() == "" || !isValidEmail(document.frmForm.custemail.value))
+			strMsg += " - [crm_email] cannot be blank and must be a valid email address.\n";
+		if (document.frmForm.subject.value.trim() == "")
+			strMsg += " - [crm_subject] cannot be blank.\n";
+		if (document.frmForm.reply.value.trim() == "")
+			strMsg += " - [crm_message] cannot be blank.\n";
+		<!--START: captchascript-->
+		if (document.frmForm.ramdomWord.value.trim() == "")
+			strMsg += " - Verification word cannot be blank.\n";			
+		<!--END: captchascript-->
+		
+		if (strMsg != ""){
+			alert(strMsg);
+			return false;
+		}
+		if (addReplyClick == 0){
+			addReplyClick = 1;
+			submitFormContactUs('addnew');
+		}
+
+	}
+	String.prototype.trim = function() {
+		return this.replace(/^\s+|\s+$/g,"");
+	}
+	function isValidEmail(str) {
+
+		var at="@"
+		var dot="."
+		var lat=str.indexOf(at)
+		var lstr=str.length
+		var ldot=str.indexOf(dot)
+		
+		if (str.indexOf(at)==-1)
+		return false
+
+		if (str.indexOf(at)==-1 || str.indexOf(at)==0 || str.indexOf(at)==lstr)
+		return false
+
+		if (str.indexOf(dot)==-1 || str.indexOf(dot)==0 || str.indexOf(dot)==lstr)
+			return false
+	
+		if (str.indexOf(at,(lat+1))!=-1)
+			return false
+
+		if (str.substring(lat-1,lat)==dot || str.substring(lat+1,lat+2)==dot)
+			return false
+
+		if (str.indexOf(dot,(lat+2))==-1)
+			return false
+		
+		if (str.indexOf(" ")!=-1)
+			return false
+
+	 	return true					
+	} 
+  </script>
+
+  <div class="page_headers">[account_contact-us]</div>
+
+  <!--START: myAccount-->
+  
+  <!--START: BODY_HEADER-->
+  <div class="page_crumbs"><a href="http://www.primaflyers.com">[frame_breadcrumb-home]</a> > <a href="crm.asp?action=contactus">[account_contact-us]</a></div>
+  <!--END: BODY_HEADER-->
+  
+  <div class="page_text">
+
+	<!--START: CATEGORY_HEADER-->
+	[CONTENT]
+	<!--END: CATEGORY_HEADER-->
+
+	<p class="checkout-headers" style="padding-bottom: 8px;">Visit Us</p>
+    <div class="rounded" style="border: 2px solid #dddddd; width: 700px; padding: 10px; margin-bottom: 30px; float: left;">
+      <div style="float: left; width: 275px;">
+        <p class="item" style="padding-bottom: 8px;"><strong>Our Address</strong></p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">[store_name]</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">[store_address1]</p>
+		<p class="item" style="padding: 0px 0px 8px 15px;">[store_city], [store_state] [store_zip]</p>
+		<p class="item" style="padding: 0px 0px 8px 15px;">Phone: [store_phone]</p>
+        <br />
+        <p class="item" style="padding-bottom: 8px;"><strong>Our Hours</strong></p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Mon: 10a to 6p</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Tue: 10a to 6p</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Wed: 10a to 6p</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Thu: 10a to 6p</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Fri: 10a to 6p</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Sat: Closed</p>
+        <p class="item" style="padding: 0px 0px 8px 15px;">Sun: Closed</p>
+      </div>
+      <div style="float: right; width: 425px;">
+        <p class="item" style="padding-bottom: 8px; padding-left: 25px;">
+          <iframe width="400" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=1425-A+Dutch+Valley+Place,+Atlanta,+GA.+30324&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=51.443116,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=1425+Dutch+Valley+Pl+NE,+Atlanta,+Fulton,+Georgia+30324&amp;z=14&amp;ll=33.793457,-84.368156&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=1425-A+Dutch+Valley+Place,+Atlanta,+GA.+30324&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=51.443116,135.263672&amp;ie=UTF8&amp;hq=&amp;hnear=1425+Dutch+Valley+Pl+NE,+Atlanta,+Fulton,+Georgia+30324&amp;z=14&amp;ll=33.793457,-84.368156" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+        </p>
+      </div>
+    </div>
+    
+    <p class="checkout-headers" style="padding-bottom: 8px;">Email Us</p>
+    <div class="rounded" style="border: 2px solid #dddddd; width: 700px; padding: 10px; float: left;">
+      <form method="post" action="crm.asp" id="frmForm" name="frmForm">
+		<input type="hidden" name="action" id="action" value="">
+        <input type="hidden" name="custid" value="[custid]" />
+		<input type="hidden" name="orderid" value="[orderid]" />
+		<input type="hidden" name="productid" value="[productid]" />
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_department]<br /><select name="departmentid" id="departmentid" class="txtBoxStyle" style="width: 50%; margin-top: 4px;">[deptdropdown]</select></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_name]<br /><input type="text" name="customer" value="[name]" maxlength="50" class="txtBoxStyle" style="width: 50%; margin-top: 4px;"><img src="assets/templates/common/images/error2.gif" width="12" height="12"></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_phone]<br /><input type="text" name="phone" value="[phone]" maxlength="50" class="txtBoxStyle" style="width: 50%; margin-top: 4px;"></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_email]<br /><input type="text" name="custemail" value="[email]" maxlength="50" class="txtBoxStyle" style="width: 50%; margin-top: 4px;"><img src="assets/templates/common/images/error2.gif" width="12" height="12"></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_subject]<br /><input name="subject" type="text" id="subject" value="" maxlength="150" class="txtBoxStyle" style="width: 50%; margin-top: 4px;"><img src="assets/templates/common/images/error2.gif" width="12" height="12"></strong></p>
+        <p class="item" style="padding-bottom: 8px;"><strong>[crm_message]<br /><textarea name="reply" id="reply" style="width: 98%; height: 150px; margin-top: 4px;" class="txtBoxStyle"></textarea><img src="assets/templates/common/images/error2.gif" width="12" height="12"></strong></p>
+        <!--START: captcha-->
+        <p class="item" style="padding-bottom: 8px;">
+          <strong>Verification</strong>
+          <br />
+          <img src="admin/image_pw.asp" border="0" width="148" style="margin: 4px 0px 8px 0px;">
+          <br />
+          Type the word above...
+          <br />
+          <input type="text" name="ramdomWord" id="ramdomWord" autocomplete="off" value="" size="25" maxlength="30" class="txtBoxStyle" style="margin-top: 4px;"><img src="assets/templates/common/images/error2.gif" width="12" height="12">
+        </p>
+		<!--END: captcha-->
+        <p align="right"><input type="button" onClick="javascript:addNew();" value="[crm_button-add-ticket]" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'"></p>
+      </form>
+    </div>
+    
+    <!--START: CATEGORY_FOOTER-->
+	[CONTENT]
+	<!--END: CATEGORY_FOOTER-->
+    
+  </div>

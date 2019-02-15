@@ -1,0 +1,684 @@
+/* 
+================================
+3DCart Style Sheet 
+by Infomart2000 Corp.
+www.3dcart.com
+================================
+*/	
+	
+
+/*******************************************************************************************************/
+/*          STYLES USED ON THE FRAME OF THE WEBSITE (HEADER, LEFT NAV, RIGHT NAV AND FOOTER)        */
+/*******************************************************************************************************/
+
+
+/*store-name:: Store Name.*/		 
+.store-name {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 35px;
+	color: #00aeef;
+	font-weight:bold;
+	text-decoration: none;
+	line-height: 35px;
+}
+/*store-slogan:: Store Slogan.*/		 
+.store-slogan {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight:bold;
+	color: #622a2a;
+}
+#logo img {
+	height: 100px;
+}
+/*top-grafx:: Controls the position/visibility of the Graffiti type design in the header of this template.*/		 
+.top-grafx {
+	display: block;
+	z-index: 1;
+	position: absolute;
+	right: 25;
+	bottom: -11;
+}
+/*frame-L:: Controls the left column background.*/		
+.frame-L {
+	background: #FFF url(../images/col-div.gif) repeat-y right;
+	padding: 0px 5px 0px 0px;
+}
+/*frame-R:: Controls the right column background.*/		
+.frame-R {
+	background: #FFF url(../images/col-div.gif) repeat-y left;
+	padding: 0px 0px 0px 5px;
+}
+/*frame-ht:: Controls the height left, right and middle columns.*/		
+.frame-ht {
+	height: 1000px;
+}
+/*menu-headers:: Controls the way the menu titles look. For example: Categories, Browse By Price, Top Sellers, etc.*/ 
+.menu-headers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	color: #00aeef;
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 40px;
+}
+/*footer::  This style controls the text you type under global footer. Merchants usually use to add security logos, credit card logos, privacy notes, etc.*/		
+.footer {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #077097;
+}
+/*footerLinks::  Controls the way the Footer Links display in the Global Footer.*/
+.footer a, .footer a:visited, .footer a:hover, .footer a:visited:hover {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #077097;
+	font-weight: normal;
+	text-decoration: underline;
+}
+/*icon:: Controls the way the menu icons display if they are being used.*/ 
+.icon {
+	font-size: 12px;
+	font-weight: normal;
+	color: #077097;
+}
+/*top-sellers-star:: Controls the background image and style for the top ranking item star.*/
+.top-sellers-star {
+	width: 30px;
+	height: 20px;
+	background: url(../images/bg-top-item-star.png) no-repeat;
+	position: absolute;
+	top: -15px;
+	left: 130px;
+	padding: 15px 19px 23px 19px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #FFF;
+}
+/*ranking:: Controls the way the menu icons display if they are being used.*/ 
+.ranking {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	color: #622a2a;
+}
+/*menu-text:: Controls the way the menu (mailing list) text look on the frame.*/ 
+.menu-text {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #622a2a;
+}
+/*price2:: Controls the way the product's price display in the top sellers and new releases sections.*/ 
+.price2 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #622a2a;
+	font-weight: bold;
+}
+/*cart-text:: Controls the way the text on the mini shopping cart displays. The mini-shopping cart is usually located in the header.*/ 
+.cart-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: Normal;
+	color: #FFF;
+}
+/*search-text:: Controls the way the search box displays of the frame.*/ 
+.search-text {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: Normal;
+	color: #707070;
+	line-height: 22px;
+	height: 22px;
+	padding: 0px 0px 0px 5px;
+	margin: 0;
+	background: #FFF;
+	border: #b1adae solid 1px;
+}
+/*A.cat:: Controls the way the Category Links display in the left or right navigation bars before a user clicks or mouses over them.*/ 	 
+A.cat {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #622a2a;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+/*A.cat:hover:: When a user passes  their mouse over them.*/ 	
+A.cat:hover {
+	color: #00aeef;
+	text-decoration: none;
+}
+/*A.cat:visited:: After a user has visited that section.*/ 
+A.cat:visited {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #622a2a;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+/*A.cat:visited:hover:: When a user hovers over a section they have visited.*/ 	 
+A.cat:visited:hover {
+	color: #00aeef;
+	text-decoration: none;
+}
+/*A.subcat:: Controls the way the Sub-Category Links display in the left or right navigation bars before a user clicks or mouses over them.*/ 	 
+A.subcat {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #622a2a;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+/*A.subcat:hover:: When a user passes  their mouse over them.*/ 	
+A.subcat:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+/*A.subcat:visited:: After a user has visited that section.*/ 
+A.subcat:visited {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #00aeef;
+	font-size: 12px;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+}
+/*A.subcat:visited:hover:: When a user hovers over a section they have visited.*/ 	 
+A.subcat:visited:hover {
+	color: #00aeef;
+	text-decoration: none;
+}
+/*A.menu:: Controls the way the Links display in the top navigation before a user clicks or mouses over on them.*/ 	 
+A.menu {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+/*A.menu:hover:: When a user passes their mouses over them.*/ 	
+A.menu:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+/*A.menu:visited:: After a user has visited that section.*/
+A.menu:visited {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #FFF;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+/*A.menu:visited:hover:: A user hovers over a section they have visited.*/ 		
+A.menu:visited:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+/*A.menu-bottom:: Controls the way the Links in the footer display before a user clicks or mouses over on them.*/ 	 
+A.menu-bottom {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #077097;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+/*A.menu-bottom:hover:: When a user passes their mouses over them.*/ 	
+A.menu-bottom:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+/*A.menu-bottom:hover:: After a user has visited that section.*/ 	
+A.menu-bottom:visited {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #077097;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+}
+/*A.menu-bottom:visited:hover:: When a user hovers over a section they have visited.*/ 		
+A.menu-bottom:visited:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+ul#menu-bottom {
+	width: 400px;
+	height: 125px;
+	float: left;
+}
+li#menu-bottom {
+	width: 200px;
+	line-height: 20px;
+	list-style: none;
+	float: left;
+}
+/*A.link:: Controls the way Secondary Links display before a user clicks or mouses over on them.*/ 	 
+A.link {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #00aeef;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: underline;
+}
+/*A.link:hover:: When a user passes their mouses over them.*/ 	
+A.link:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+/*A.link:hover:: After a user has visited that section.*/ 	
+A.link:visited {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #00aeef;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: underline;
+}
+/*A.link:visited:hover:: When a user hovers over a section they have visited.*/ 		
+A.link:visited:hover {
+	color: #622a2a;
+	text-decoration: none;
+}
+A.top-details, A.top-details:visited {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #FFF;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	background: url(../images/btn-more-details.png) no-repeat;
+	display: block;
+	text-align: center;
+	width: 130px;
+	height: 28px;
+	line-height: 28px;
+}
+A.top-details:hover, A.top-details:visited:hover {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #FFF;
+	font-size: 14px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	background: url(../images/btn-more-details.png) no-repeat;
+	display: block;
+	text-align: center;
+	width: 130px;
+	height: 28px;
+	line-height: 28px;
+}
+/*A.details:: Controls the way the More Details Links display before a user clicks or mouses over them.*/ 	 
+A.details {
+	color: #622a2a;
+	font-size: 11px;
+	font-style: normal;
+	text-decoration: underline;
+	font-weight:bold;
+}
+/*A.details:hover:: When a user passes their mouse over them.*/ 	 	
+A.details:hover {
+	color: #00aeef;
+}
+/*A.details:visited:: After a user has visited that section.*/ 
+A.details:visited {
+	color: #622a2a;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: underline;
+	font-weight:bold;
+}
+/*A.details:visited:hover:: When a user hovers over a section they have visited.*/ 	 
+A.details:visited:hover {
+	color: #00aeef;
+}
+/*******************************************************************************************************/
+/*          STYLES USED THROUGHTOUT THE WEBSITE        */
+/*******************************************************************************************************/
+
+
+
+/*body:: Controls website background and any other text outside of a table without an associated style.*/ 	
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #666666;
+	background: #FFF url(images/BG_body.jpg) repeat-x;;
+	font-weight: normal;
+	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+}
+/*td:: Controls all text inside a table without and associated style.*/ 
+td {
+	color: #444;
+	text-decoration: none;
+	word-spacing: normal;
+	letter-spacing: 0px;
+	line-height: 1.5em;
+	font-size: 12px;
+}
+/*data:: Controls the font style of your content on all the pages.*/
+.data {
+	background-color: #fff;
+	color: #444;
+	text-decoration: none;
+	word-spacing: normal;
+	letter-spacing: 0px;
+	line-height: 1.5em;
+	font-size: 12px;
+}
+/*alternative:: Controls the background color of the boxes used throughout the site.*/
+.alternative {
+	background-color: #f9f8f8;
+	padding: 2px 2px 2px 2px;
+	border: 1px solid #eae9e9;
+}
+/*page_headers:: Controls the title of all your pages.*/
+.page_headers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: bold;
+	color: #00aeef;
+	letter-spacing: 0px;
+}
+/*titles:: Controls the Tiles  of sections within pages on the site such as (Specials, Feature Items, Items, Related Items).*/ 
+.titles {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 20px;
+	letter-spacing: 0px;
+	color: #444;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-weight: bold;
+	border-top: none;
+	border-bottom: 1px solid #444;
+	border-left: none;
+	border-right: none;
+	background-color:#FFF;
+	font-style:italic;
+}
+/*price:: Controls the way the product's final price display throughout the site.*/ 
+.price {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #11b3f0;
+	font-weight: bold;
+	letter-spacing: 0px;
+}
+/*error:: Controls the error messages*/ 
+.error {
+	font-size: 12px;
+	font-weight: normal;
+	color: #e10e04;
+	text-decoration: none;
+}
+/*borders:: Controls the color of the line dividers used throughout the site.*/ 
+.borders {
+	color: #585C5F;
+	border: 1px dotted #cccccc;
+	border-style: none none dotted;
+}
+/*borders2:: Controls the color of the dotted line dividers used throughout the site.*/ 
+.borders2 {
+	border: 1px dotted #cccccc;
+	border-style: none none dotted;
+}
+/*A:: Controls the way the all Links without an associated style display before a user clicks or mouses over them.*/ 	 
+A {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #622a2a;
+	font-size: 12px;
+	font-style: normal;
+	font-weight:normal;
+	text-decoration: underline;
+	line-height: 14px;
+}
+/*A:hover:: When a user passes  their mouse over them.*/ 	 	
+A:hover {
+	color: #622a2a;
+	text-decoration: none;
+	line-height: 14px;
+}
+/*A:visited:: After a user has visited that section.*/ 
+A:visited {
+	color: #622a2a;
+	font-size: 12px;
+	font-style: normal;
+	text-decoration: underline;
+	font-weight:normal;
+	line-height: 14px;
+}
+/*A:visited:hover:: When a user hovers over a section they have visited.*/ 	 
+A:visited:hover {
+	color: #622a2a;
+	text-decoration: none;
+	line-height: 14px;
+}
+
+/*******************************************************************************************************/
+/*   STYLES ONLY USED ON VIEW CART AND CHECKOUT PAGES      */
+/*******************************************************************************************************/
+
+/*checkout-headers:: Controls the titles of the sections on the checkout pages (Billing Information, Shipping Information etc)*/
+.checkout-headers {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #622a2a;
+	font-weight: bold;
+}
+/*steps:: Controls the way the steps on the checkout pages display.*/
+.steps {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #cccccc;
+}
+/*steps_on:: Controls the way the step the customer is currently on displays on the checkout pages.*/
+.steps_on {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #00aeef;
+}
+/*titles2:: Controls the titles on the view cart page*/ 
+.titles2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #eeeeee;
+	color: #00aeef;
+	padding:4px;
+}
+/*******************************************************************************************************/
+/*   STYLES ONLY USED ON PRODUCT PAGES      */
+/*******************************************************************************************************/
+
+/*options-titles:: Controls the way the option titles display on the product page.*/
+.options-titles {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #585C5F;
+	border: 1px dotted #cccccc;
+	border-style: none none dotted;
+}
+/*item:: Controls the item description and item details text.*/ 
+.item {
+	font-size: 12px;
+	color: #585C5F;
+}
+/*itemTitle:: Controls the name of the Product.*/ 
+.item-title {
+	font-size: 16px;
+	color: #00aeef;
+	font-weight:bold;
+}
+/*price-info:: Controls the way the sub-prices display on the product page, the final price is controlled by the style called "price".*/ 
+.price-info {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: Normal;
+	color: #585C5F;
+}
+/*small-txt:: Controls the way the item id displays.*/ 
+.small-txt {
+	color: #afafae;
+	text-decoration: none;
+	text-align: left;
+	letter-spacing: 0px;
+	font-size: 10px;
+	vertical-align:bottom;
+}
+/*availability-txt:: Controls the way the Availability of the product displays i.e. 'In Stock', 'Back Order'.*/ 
+.availability-txt {
+	color: #FFF;
+	text-decoration: none;
+	text-align: left;
+	letter-spacing: 2px;
+	line-height: 1.2em;
+	font-size: 11px;
+	background-color:#00aeef;
+}
+/*reward-title:: Controls the title of the Reward Points section.*/ 
+.reward-title {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	color: #00aeef;
+	text-decoration: none;
+	word-spacing: normal;
+	text-align: left;
+	letter-spacing: 7px;
+	line-height: 10px;
+	font-size: 16px;
+	font-style:italic;
+}
+/*******************************************************************************************************/
+/*      FORM FIELDS & BUTTONS THROUGHOUT THE WEBSITE      */
+/*******************************************************************************************************/
+
+/*btn:: Controls the buttons, (ONLY if it is not using and image).*/ 
+.btn {
+	border-top: 1px solid #dcdbdc;
+	border-bottom: 1px solid #dcdbdc;
+	border-left: 1px solid #dcdbdc;
+	border-right: 1px solid #dcdbdc;
+	background: #00aeef url(images/BG_btn.gif) repeat-x;
+	font-weight: bold;
+	font-size: 12px;
+	color: #FFF;
+	cursor: pointer;
+	margin:1px;
+	padding: 2px 6px 2px 6px;
+}
+/*btn_over:: Controls the buttons when a user mouses over them, (ONLY if it is not using and image).*/ 
+.btn_over {
+	border-top: 1px solid #dcdbdc;
+	border-bottom: 1px solid #dcdbdc;
+	border-left: 1px solid #dcdbdc;
+	border-right: 1px solid #dcdbdc;
+	background: #00aeef;
+	font-weight: bold;
+	font-size: 12px;
+	color: #FFF;
+	cursor: pointer;
+	margin:1px;
+	padding: 2px 6px 2px 6px;
+}
+/*txtBoxStyle:: Controls the text and style of the Text Boxes.*/  	
+.txtBoxStyle {
+	border-top: 1px solid #dde5e9;
+	border-bottom: 1px solid #dde5e9;
+	border-left: 1px solid #dde5e9;
+	border-right: 1px solid #dde5e9;
+	background-color: #FFF;
+	font-weight: normal;
+	font-size: 11px;
+	color: #38393a;
+}
+/*txtAreaStyle:: Controls the text and style of the Text Areas.*/ 	
+.txtAreaStyle {
+	border-top: 1px solid #dde5e9;
+	border-bottom: 1px solid #dde5e9;
+	border-left: 1px solid #dde5e9;
+	border-right: 1px solid #dde5e9;
+	background-color: #FFF;
+	font-weight: normal;
+	font-size: 11px;
+	color: #343333;
+}
+/*txtSearch:: Controls the style of the Search Box, if different from txtBoxStyle.*/
+.txtBoxSearch {
+	height: 20px;
+	color: #585C5F;
+	font-size: 12px;
+	border: none;
+	padding: 3px 0px 0px 0px;
+	margin: 0;
+}
+/*******************************************************************************************************/
+/*   STYLES USED ONLY ON THE INVOICE        */
+/*******************************************************************************************************/
+
+/*invoice_table:: Controls the background color on your invoices*/ 
+.invoice_table {
+	background-color: #f9f8f8;
+}
+/*invoice_title:: Controls the way the title of the invoices look */ 
+.invoice_title {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: #cbcaca;
+	color: #4f4e4e;
+}
+img {
+	border: none;
+}
+/*************************************************************/
+/*          LEGACY STYLES: STYLES USED PRIOR TO v3.2         */
+/*************************************************************/
+
+
+/*font1:: Primary Screen Font */ 
+.font1 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+/*font2:: Secondary Screen Font */ 
+.font2 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #077097;
+}
+.font3 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #FFF;
+}
+.font4 {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #c32519;
+}
+/*top:: Controls the  Color of the top Bar*/		
+.top {
+	background: #FFF url(images/BG_Logo.gif) repeat-x;
+}
+/*line:: Controls the  Color of the line bellow the top bar*/		
+.line {
+	background: #FFF url(../images/BG_menu.gif) repeat-x;
+}

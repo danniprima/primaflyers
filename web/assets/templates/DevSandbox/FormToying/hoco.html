@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/assets/templates/DevSandbox/FormToying/CSS/style.css">
+    <script src = "/assets/templates/DevSandbox/FormToying/form-handler.js"></script>
+  </head>
+
+  <body>
+
+    <div class="newspaper">
+       <span class="newspaper-page" id="left-page">
+          <img id="contest-art-promo" src="/assets/templates/DevSandbox/FormToying/img/Artboard 1.png" alt="A Prima Homecoming: 2018" width="100%" border="0" align="middle">
+       
+       </span>
+       <span class="newspaper-page" id="right-page">
+
+          <a href="https://www.primaflyers.com/hoco-details">
+            <div id="info-link">
+              <span id= "contest-details-link" style="font-weight: bold; color: #ffffff;">-- Contest Details, Click Here --</span>
+            </div>
+          </a>
+
+          <br>
+
+          <form id="contest-form" action="/form-handler.php">
+            <legend>Register Here</legend>
+            <div>
+              <label for="school-name">Name of School:</label>
+              <input class="constest-form" type="text" id="school-name" name="school_name" required autocomplete="on">
+            </div>
+            <div>
+              <label for="school-address">School Address:</label>
+              <input class="constest-form" type="text" id="school-address" name="school_address" required autocomplete="on">
+            </div>
+            <div>
+              <label for="contact-name">Primary Contact:</label>
+              <input class="constest-form" type="text" id="contact-name" name="contact_name" required autocomplete="on">
+            </div>
+            <div>
+              <label for="phone">Contact's phone number:</label>
+              <input class="constest-form" type="text" id="phone" name="phone_number" required autocomplete="on">
+            </div>
+            <div>
+              <label for="mail">E-mail:</label>
+              <input class="constest-form" type="email" id="mail" name="user_mail" required autocomplete="on">
+            </div>
+
+            <div class="button">
+              <button type="button" onclick="formSubmit()" >Submit</button>
+              **Contest begins on July 9th, 2018**
+            </div>
+
+          </form>
+        </span>
+    </div>                  
+
+  </body>
+</html>

@@ -1,0 +1,386 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb">
+    <div class="container">
+        <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">[frame_breadcrumb-home]</span></a></li>
+            <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span itemprop="name">[account_header-update-account]</span></li>
+        </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header">
+    <div class="container">
+        <h1 class="page_heading">[account_header-update-account]</h1>
+
+        <!--START: myAccount-->
+        <div class="button"><a href="myaccount.asp" class="icon-btn btn btn-link"><i class="icon-left"></i> [account_backtomyaccount-text]</a></div>
+        <!--END: myAccount-->
+
+        <!--START: CATEGORY_HEADER-->
+        <div class="category-header" id="updateAccountHeader">[CONTENT]</div>
+        <!--END: CATEGORY_HEADER-->
+        <!--START: upd_message-->
+        <div class="error pad10 boxShadow">[update_message]</div>
+        <!--END: upd_message-->
+    </div>
+</section>
+
+<section id="updateAccount" class="updateAccount-page-content page-content">
+    <div class="container">
+        <div class="row">
+            <div class="content-area col-lg-12">
+                <form action="myaccount.asp?action=updacc" method="post" name="form1" id="form1" autocomplete="off" data-parsley-validate>
+                    <input type="hidden" name="tknio" value="[tknio]">
+                    <input type="hidden" name="contactid" value="[contactid]" />
+                    <input type="hidden" name="update" value="1" />
+
+                    <div class="row">
+                        <div class="loginInfo accountRegForm-col  col-lg-12">
+                            <div class="header">
+                                <h3 class="page_heading">[account_update-logininfo-heading]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="loginField col-lg-12">
+                                    <label class="validation-field">
+                                        <input type="text" size="25" name="email" maxlength="100" value="[email]" tabindex="1" class="form-control txtBoxStyle" placeholder="[CustomerInfo_email]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-lg-12">
+                                    <input type="password" size="12" name="pass_old" maxlength="16" tabindex="2" class="form-control txtBoxStyle" placeholder="[CustomerInfo_old-password]" />
+                                </div>
+                                <div class="loginField col-lg-12">
+                                    <input type="password" size="12" name="pass" maxlength="16" tabindex="3" class="form-control txtBoxStyle" placeholder="[CustomerInfo_new-password]" [CallFunctionVerifyStrongPass] />
+                                </div>
+                                <!--START: StrongPasswordBar-->
+                                <div class="loginField col-lg-12">
+                                    <div class="strong-pass-bar" style="background-image: linear-gradient(to left, #86e01e 0%, #f63a0f 100%);">
+                                        <div id="divStrong"></div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--END: StrongPasswordBar-->
+                                <!--START: PasswordMSG-->
+                                <div class="PasswordMSG  col-lg-12">
+                                    <p>[CustomerInfo_password_policy]</p>
+                                </div>
+                                <!--END: PasswordMSG-->
+                                <div class="loginField col-lg-12">
+                                    <input type="password" size="12" name="pass_new" maxlength="16" tabindex="4" class="form-control txtBoxStyle" placeholder="[CustomerInfo_confirm-password]" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="row">
+                        <div id="billingInfo" class="billingInfo accountRegForm-col  col-lg-12">
+                            <div class="header">
+                                <h3 class="page_heading">[account_billing-info]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="loginField col-sm-6">
+                                    <label class="validation-field">
+                                        <input name="billing_firstname" type="text" value="[billing_firstname]" size="40" tabindex="5" class="form-control txtBoxStyle" placeholder="[CustomerInfo_firstname]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-6">
+                                    <label class="validation-field">
+                                        <input name="billing_lastname" type="text" value="[billing_lastname]" size="40" tabindex="6" class="form-control txtBoxStyle" placeholder="[CustomerInfo_lastname]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <input name="billing_company" type="text" id="billing_company" value="[billing_company]" maxlength="255" size="25" tabindex="7" class="form-control txtBoxStyle" placeholder="[CustomerInfo_company]" />
+                                </div>
+                                <div class="loginField col-sm-8">
+                                    <label class="validation-field">
+                                        <input name="billing_address" type="text" value="[billing_address]" size="40" tabindex="9" class="form-control txtBoxStyle" placeholder="[CustomerInfo_address]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-4">
+                                    <input name="billing_address2" type="text" value="[billing_address2]" size="40" tabindex="10" class="form-control txtBoxStyle" placeholder="[CustomerInfo_address2]" />
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <label class="validation-field">
+                                        <input name="billing_city" type="text" value="[billing_city]" size="40" tabindex="11" class="form-control txtBoxStyle" placeholder="[CustomerInfo_city]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-5">
+                                    <label class="validation-field">
+                                        <select id='billing_country' name='billing_country' onchange="populateState('billing_state', 'billing_country', '', undefined, '')" tabindex="14" class="form-control txtBoxStyle"></select>
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-4">
+                                    <label class="validation-field">
+                                        <select id="billing_state" name="billing_state" maxlength="100" tabindex="12" class="form-control txtBoxStyle"></select>
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-3">
+                                    <label class="validation-field">
+                                        <input name="billing_zip" type="text" value="[billing_zip]" size="40" tabindex="13" class="form-control txtBoxStyle" placeholder="[CustomerInfo_zip]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <label class="validation-field">
+                                        <input name="billing_phone" type="text" value="[billing_phone]" size="40" tabindex="8" class="form-control txtBoxStyle" placeholder="[CustomerInfo_phone]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="shippingInfo" class="shippingInfo accountRegForm-col  col-lg-12">
+                            <div class="header">
+                                <h3 class="page_heading">[account_shipping-info]</h3>
+                            </div>
+                            <div class="row">
+                                <div class="loginField col-sm-6">
+                                    <label class="validation-field">
+                                        <input name="shipping_firstname" type="text" value="[shipping_firstname]" size="40" tabindex="15" class="form-control txtBoxStyle" placeholder="[CustomerInfo_firstname]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-6">
+                                    <label class="validation-field">
+                                        <input name="shipping_lastname" type="text" value="[shipping_lastname]" size="40" tabindex="16" class="form-control txtBoxStyle" placeholder="[CustomerInfo_lastname]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <input name="shipping_company" type="text" id="shipping_company" value="[shipping_company]" maxlength="255" size="25" tabindex="17" class="form-control txtBoxStyle" placeholder="[CustomerInfo_company]" />
+                                </div>
+                                <div class="loginField col-sm-8">
+                                    <label class="validation-field">
+                                        <input name="shipping_address" type="text" value="[shipping_address]" size="40" tabindex="19" class="form-control txtBoxStyle" placeholder="[CustomerInfo_address]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-4">
+                                    <input name="shipping_address2" type="text" value="[shipping_address2]" size="40" tabindex="20" class="form-control txtBoxStyle" placeholder="[CustomerInfo_address2]" />
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <label class="validation-field">
+                                        <input name="shipping_city" type="text" value="[shipping_city]" size="40" tabindex="21" class="form-control txtBoxStyle" placeholder="[CustomerInfo_city]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-5">
+                                    <label class="validation-field">
+                                        <select id='shipping_country' name='shipping_country' onchange="populateState('shipping_state', 'shipping_country', '', undefined, '')" tabindex="24" class="form-control txtBoxStyle"></select>
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-4">
+                                    <label class="validation-field">
+                                        <select id="shipping_state" name="shipping_state" maxlength="100" tabindex="22" class="form-control txtBoxStyle"></select>
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-3">
+                                    <label class="validation-field">
+                                        <input name="shipping_zip" type="text" value="[shipping_zip]" size="40" tabindex="23" class="form-control txtBoxStyle" placeholder="[CustomerInfo_zip]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+                                <div class="loginField col-sm-12">
+                                    <label class="validation-field">
+                                        <input name="shipping_phone" type="text" value="[shipping_phone]" size="40" tabindex="18" class="form-control txtBoxStyle" placeholder="[CustomerInfo_phone]" />
+                                        <span class="required-indicator"></span>
+                                    </label>
+                                </div>
+
+                                <!--START: addressType-->
+                                <div class="loginField col-sm-12">
+                                    <label for="shipping_addresstype">[CustomerInfo_address_type]</label>
+                                    <select name="shipping_addresstype" id="shipping_addresstype" tabindex="25" class="form-control txtBoxStyle">
+                                        [addressTypeDropDown]
+                                    </select>
+                                </div>
+                                <!--END: addressType-->
+
+                                <!--START: update_address-->
+                                <div class="loginField col-lg-6">
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" name="update_open_orders" id="update_open_orders" class="txtBoxStyle" value="1" /> [CustomerInfo_update-orders]
+                                        </label>
+                                    </div>
+                                </div>
+                                <!--END: update_address-->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="otherInfo accountRegForm-col  col-lg-12">
+                            <!--<div class="header">
+                                <h3 class="page_heading">Other Information</h3>
+                            </div>-->
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="mailist-subscribe"><input type="checkbox" name="maillist" value="1" tabindex="26" [maillist] /> I would like to receive updates and promotions by email</div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="otherInfo col-lg-12 accountRegForm-col text-right">
+                            <button type="button" class="btn btn-primary" onclick="doUpdate:doUpdate(this.form);">[account_updateinfo-button-text]</button>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="content-area col-lg-12">
+                <!--START: CATEGORY_FOOTER-->
+                <div class="row">
+                    <div class="category-footer col-lg-12" id="updateAccountFooter">[CONTENT]</div>
+                </div>
+                <!--END: CATEGORY_FOOTER-->
+            </div>
+    </div>
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/utilities.js"></script>
+<script type="text/javascript" src="state_countryjs.asp"></script>
+<script type="text/javascript">
+	var emailReq = 1;
+</script>
+<script type="text/javascript">
+    initCountry('[billing_country_script]', '[billing_state_script]', 'billing_state', 'billing_country', '');
+    initCountry('[shipping_country_script]', '[shipping_state_script]', 'shipping_state', 'shipping_country', '');
+
+    function doUpdate(objForm) {
+        String.prototype.trim = function () {
+            return this.replace(/^\s+|\s+$/g, "");
+        }
+
+        function IsNumeric(strString) {
+            var strValidChars = "0123456789.-";
+            var strChar;
+            var blnResult = true;
+
+            if (strString.length == 0) return false;
+            //  test strString consists of valid characters listed above
+            for (i = 0; i < strString.length && blnResult == true; i++) {
+                strChar = strString.charAt(i);
+                if (strValidChars.indexOf(strChar) == -1) {
+                    blnResult = false;
+                }
+            }
+            return blnResult;
+        }
+
+
+        var strMsg = "";
+
+        if (emailReq == 1) {
+            if (objForm.email.value.trim() == "")
+                strMsg += " - Please enter a valid Email.\n";
+            if (objForm.email.value.length > 50)
+                strMsg += " - Maximum length for this field is 50.\n";
+        }
+
+        //BILLING INFO
+        if (objForm.billing_firstname.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_firstname].\n";
+        if (objForm.billing_firstname.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+        if (objForm.billing_lastname.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_lastname].\n";
+        if (objForm.billing_lastname.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+        if (objForm.billing_phone.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_phone].\n";
+        if (objForm.billing_phone.value.length > 18)
+            strMsg += " - Maximum length for this field is 18 characters.\n";
+
+        if (objForm.billing_address.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_address].\n";
+        if (objForm.billing_address.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.billing_city.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_city].\n";
+        if (objForm.billing_city.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.billing_state.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_state].\n";
+        if (objForm.billing_state.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.billing_zip.value.trim() == "")
+            strMsg += " - Please enter your Billing [CustomerInfo_zip].\n";
+        if (objForm.billing_zip.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+
+        //SHIPPING INFO
+        if (objForm.shipping_firstname.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_firstname].\n";
+        if (objForm.shipping_firstname.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+        if (objForm.shipping_lastname.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_lastname].\n";
+        if (objForm.shipping_lastname.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+        if (objForm.shipping_phone.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_phone].\n";
+        if (objForm.shipping_phone.value.length > 18)
+            strMsg += " - Maximum length for this field is 18 characters.\n";
+
+        if (objForm.shipping_address.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_address].\n";
+        if (objForm.shipping_address.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.shipping_city.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_city].\n";
+        if (objForm.shipping_city.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.shipping_state.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_state].\n";
+        if (objForm.shipping_state.value.length > 50)
+            strMsg += " - Maximum length for this field is 50 characters.\n";
+
+        if (objForm.shipping_zip.value.trim() == "")
+            strMsg += " - Please enter your Shipping [CustomerInfo_zip].\n";
+        if (objForm.shipping_zip.value.length > 20)
+            strMsg += " - Maximum length for this field is 20 characters.\n";
+
+
+        if (strMsg != "") {
+            alert(strMsg);
+            return false;
+        }
+
+        if (document.getElementById('update_open_orders') && document.getElementById('update_open_orders').checked)
+        {
+            if (confirm('[CustomerInfo_update-orders]'))
+                objForm.submit();
+        }
+        else
+            objForm.submit();
+
+   }
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/registration.css" type="text/css" media="screen" />
+<!--END: template_styles-->

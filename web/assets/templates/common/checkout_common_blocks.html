@@ -1,0 +1,466 @@
+<!--START: PPEXPRESS_SCRIPTS-->
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+<script>
+    var strToken2;
+    var strResult;
+    var strRetToken = "";
+    var reportError;
+
+paypal.Button.render({
+    env: '[PPEXPRESS_ENV]',
+    commit: true, // Show a 'Pay Now' button
+    style: {
+    color: 'gold',
+    size: 'small'
+    },
+
+    payment: function(data, actions)
+    {
+        jQuery.ajax({
+            url: 'paypal_express.asp?ch=0&ajaxpp=1',
+            dataType: 'html',
+            type: 'POST',
+            async: false,
+            cache: false,
+            success: function (strResult) {
+                strRetToken = strResult;
+            },
+            error: reportError
+        });
+        return strRetToken;
+    },
+
+    onAuthorize: function(data, actions)
+    {
+
+        jQuery.ajax({
+            url: 'paypal_express.asp?ajaxpp=1&token=' + strRetToken,
+            dataType: 'html',
+            type: 'POST',
+            async: false,
+            cache: false,
+            success: function (strResult) {
+                strRetURL = strResult;
+            },
+            error: reportError
+        });
+        if (strRetURL !== '')
+            window.location.href = strRetURL;
+        else
+            alert("Error processing Paypal request. Please, try again.");
+
+    },
+
+    onCancel: function(data, actions) {},
+    onError: function(err) {}
+
+
+}, '#paypal-button');
+</script>
+<!--END: PPEXPRESS_SCRIPTS-->
+
+
+
+
+
+
+
+
+
+
+<!--START: BREADCHECKOUT_SCRIPTS-->
+
+<script>
+    if (typeof BreadScriptLoaded != 'undefined')
+        doBreadCheckoutMain();
+
+    function doBreadCheckoutMain()
+    {
+        if (BreadScriptLoaded == false)
+        {
+            addJavascript('[BreadScriptJS]','[BreadScriptDataAPIKey]');
+            BreadScriptLoaded = true;
+        }
+
+    function doBreadCheckout()
+    {
+        var opts = '';
+        var bolIsMultiPageCheckout = [IS_MULTIPAGE_CHECKOUT];
+
+        if (    
+                (billing.billing_firstname && billing.billing_firstname.value  != '')
+            &&  (billing.billing_lastname && billing.billing_lastname.value   != '')
+            &&  (billing.billing_address && billing.billing_address.value    != '')
+            &&  (billing.billing_city && billing.billing_city.value       != '')
+            &&  (billing.billing_state && billing.billing_state.value      != '')
+            &&  (billing.billing_zip && billing.billing_zip.value        != '')
+            &&  (billing.shipping_firstname && billing.shipping_firstname.value != '')
+            &&  (billing.shipping_lastname && billing.shipping_lastname.value  != '')
+            &&  (billing.shipping_address && billing.shipping_address.value   != '')
+            &&  (billing.shipping_city && billing.shipping_city.value      != '')
+            &&  (billing.shipping_state && billing.shipping_state.value     != '')
+            &&  (billing.shipping_zip && billing.shipping_zip.value       != '')
+            &&  (billing.billing_country && billing.billing_country.value   == 'US')
+        )
+        {
+            opts = {
+                buttonId: 'bread-button',
+                actAsLabel: false,
+                asLowAs: true,
+                customCSS: BreadCheckoutCustomStyleCSS,
+                disableEditShipping: true,
+                billingContact: 
+                      {
+                          "firstName":  billing.billing_firstname.value,
+                          "lastName":   billing.billing_lastname.value,
+                          "address":    billing.billing_address.value,
+                          "address2":   billing.billing_address2.value,
+                          "city":       billing.billing_city.value,
+                          "phone":      billing.billing_phone.value,
+                          "state":      billing.billing_state.value,
+                          "zip":        billing.billing_zip.value,
+                          "email":      (billing.billing_email!=undefined?billing.billing_email.value:"")
+                      },
+                shippingContact: 
+                    {
+                        "firstName": billing.shipping_firstname.value,
+                        "lastName": billing.shipping_lastname.value,
+                        "address": billing.shipping_address.value,
+                        "address2": billing.shipping_address2.value,
+                        "city": billing.shipping_city.value,
+                        "phone": billing.shipping_phone.value,
+                        "state": billing.shipping_state.value,
+                        "zip": billing.shipping_zip.value,
+                        "email": (billing.billing_email!=undefined?billing.billing_email.value:"")
+                    },
+                [BREADCHECKOUT_TAX]
+                [BREADCHECKOUT_DISCOUNT]
+                [BREADCHECKOUT_SHIPPING]
+                items: [[BREADCHECKOUT_ITEMS]]
+            };
+        }
+        else if ( 
+                (billing.billing_firstname && billing.billing_firstname.value  != '')
+            &&  (billing.billing_lastname && billing.billing_lastname.value   != '')
+            &&  (billing.billing_address && billing.billing_address.value    != '')
+            &&  (billing.billing_city && billing.billing_city.value       != '')
+            &&  (billing.billing_state && billing.billing_state.value      != '')
+            &&  (billing.billing_zip && billing.billing_zip.value        != '')
+            &&  (billing.billing_country && billing.billing_country.value   == 'US')
+        )
+        {
+            opts = {
+                buttonId: 'bread-button',
+                customCSS: BreadCheckoutCustomStyleCSS,
+                actAsLabel: false,
+                asLowAs: true,
+                disableEditShipping: true,
+                billingContact: 
+                      {
+                          "firstName":  billing.billing_firstname.value,
+                          "lastName":   billing.billing_lastname.value,
+                          "address":    billing.billing_address.value,
+                          "address2":   billing.billing_address2.value,
+                          "city":       billing.billing_city.value,
+                          "phone":      billing.billing_phone.value,
+                          "state":      billing.billing_state.value,
+                          "zip":        billing.billing_zip.value,
+                          "email":      (billing.billing_email!=undefined?billing.billing_email.value:"")
+                      },
+                [BREADCHECKOUT_TAX]
+                [BREADCHECKOUT_DISCOUNT]
+                [BREADCHECKOUT_SHIPPING]
+                items: [[BREADCHECKOUT_ITEMS]]
+            };
+        }
+        else
+            {
+                opts ={
+                    buttonId: 'bread-button',
+                    customCSS: BreadCheckoutCustomStyleCSS,
+                    actAsLabel: false,
+                    asLowAs: true,
+                    disableEditShipping: true,
+                    [BREADCHECKOUT_TAX]
+                    [BREADCHECKOUT_DISCOUNT]
+                    [BREADCHECKOUT_SHIPPING]
+                    items: [[BREADCHECKOUT_ITEMS]]
+            };
+    }
+
+                    //document.getElementById("online-[id]").checked = true;
+
+                    document.getElementById('online-[id]').addEventListener('click', function (e) {
+                        bread.showCheckout(opts);
+                    });
+
+
+    opts.done = function (err, tx_token){
+            if (err) {
+                console.error("There was an error: " + err);
+                return;
+            }
+            if (tx_token !== undefined) {
+                document.getElementById("hdnBreadCheckoutToken").value = tx_token;
+                jQuery('#online-[id]').prop('checked', true);
+                if (bolIsMultiPageCheckout)
+                    submitCheckoutForm();
+                else
+                    doCheckout(document.billing);    
+            }
+            return;
+    };
+    bread.checkout(opts); 
+
+    }
+        if (!jQuery("#bread-button").data("loaded"))
+            setTimeout(function() { doBreadCheckout(); },500);
+    }
+
+
+
+</script>
+<input type="hidden" id="hdnBreadCheckoutToken" name="hdnBreadCheckoutToken" value="" />
+<input type="hidden" id="hdnBreadCheckoutID"    name="hdnBreadCheckoutID"    value="online-[id]" />
+<!--END: BREADCHECKOUT_SCRIPTS-->
+
+<!--START: BREADCHECKOUT_SCRIPTS2-->
+
+
+<script src="https://checkout[BREADCHECKOUT_ENV].getbread.com/bread.js" data-api-key="[BREADCHECKOUT_API_KEY]"></script>
+<script>
+var opts = {
+  buttonId: 'bread-label',
+  actAsLabel: true,
+  asLowAs: true,
+  allowCheckout: false,
+  items: [[BREADCHECKOUT_ITEMS]]
+};
+opts.done = function (err, tx_token) {
+};
+bread.checkout(opts);
+</script>
+<!--END: BREADCHECKOUT_SCRIPTS2-->
+
+<!--START: PAYFORTMERCHANTPAGE-->
+<input type="hidden" name="hdnPayFortMerchantPageID" id="hdnPayFortMerchantPageID" value="online-[id]" />
+<!--END: PAYFORTMERCHANTPAGE-->
+
+<!--START: PAYFORTMERCHANTPAGESCRIPTS-->
+<form name="payfortmerchantpage" id="payfortmerchantpage" method="POST" action="[PayFortMerchantPageURL]">
+    <input type="hidden" name="access_code" id="access_code" value="[payfortmerchantpage_access_code]">
+    <input type="hidden" name="card_number" id="card_number" value="">
+    <input type="hidden" name="card_security_code" id="card_security_code" value="">
+    <input type="hidden" name="expiry_date" id="expiry_date" value="">
+    <input type="hidden" name="language" id="language" value="en">
+    <input type="hidden" name="merchant_identifier" id="merchant_identifier" value="[payfortmerchantpage_merchant_identifier]">
+    <input type="hidden" name="merchant_reference" id="merchant_reference" value="[payfortmerchantpage_merchant_reference]">
+    <input type="hidden" name="return_url" id="return_url" value="[payfortmerchantpage_return_url]">
+    <input type="hidden" name="service_command" id="service_command" value="TOKENIZATION">
+    <input type="hidden" name="signature" id="signature" value="[payfortmerchantpage_signature]">
+</form>
+<!--END: PAYFORTMERCHANTPAGESCRIPTS--> 
+<script>
+                <!--START: PAYFORTMERCHANTPAGE_SCRIPTS_MULTISTEP-->
+                //PayFort Merchant Page
+                //////////////////////////////////////////////////////////////////////////////////
+                if (jQuery("#hdnPayFortMerchantPageID").length > 0 && jQuery("#hdnPayFortMerchantPageID").val() == jQuery('input[name=payment]:checked', '#' + objForm.name).val()) {
+                    var arrPayFortMerchantPageID = jQuery("#hdnPayFortMerchantPageID").val().split('-');
+                    var PayFortMerchantPageID = arrPayFortMerchantPageID[1];
+                    document.forms.payfortmerchantpage.card_number.value = jQuery("input[name=ff" + PayFortMerchantPageID + "_ocardno]").val();
+                    document.forms.payfortmerchantpage.expiry_date.value = jQuery("select[name=ff" + PayFortMerchantPageID + "_ocardexpiresyear] option:selected").val().substring(2,4) + jQuery("select[name=ff" + PayFortMerchantPageID + "_ocardexpiresmonth] option:selected").val();
+                    document.forms.payfortmerchantpage.card_security_code.value = jQuery("input[name=ff" + PayFortMerchantPageID + "_ocardcvv2]").val();
+                    document.forms.payfortmerchantpage.submit()
+                    return;
+                }
+                //////////////////////////////////////////////////////////////////////////////////
+                <!--END: PAYFORTMERCHANTPAGE_SCRIPTS_MULTISTEP-->
+</script>
+
+
+<!--START: KLARNAPAYMENTSCRIPTS-->
+<script>
+    window.klarnaAsyncCallback = function () 
+    {
+        Klarna.Payments.init({
+            client_token: '[KLARNA_CLIENT_TOKEN]'
+        })
+    };
+    
+    function KlarnaPaymentsLoad()
+    {
+        var arrKlarnaPaymentsID = jQuery("#hdnKlarnaPaymentsID").val().split('-');
+        var KlarnaPaymentsID = arrKlarnaPaymentsID[1];
+        var arrKlarnaPaymentsIdentifiers = [[strKlarnaPaymentsIdentifiers]];
+        console.log('arrKlarnaPaymentsIdentifiers.length:' + arrKlarnaPaymentsIdentifiers.length);
+        const klarnaPaymentLoadCallback = klarnaPaymentContainer => (res = {}) => {
+            if (res != null && res != undefined && !res.show_form) {
+                jQuery(klarnaPaymentContainer).hide();
+            }
+        }
+        for (i = 0; i < arrKlarnaPaymentsIdentifiers.length; i++) {
+
+            Klarna.Payments.load
+            (
+                {
+                    container: '#klarna_container_'+ KlarnaPaymentsID +'---KP---' + arrKlarnaPaymentsIdentifiers[i],
+                    payment_method_category: arrKlarnaPaymentsIdentifiers[i]
+                },
+                klarnaPaymentLoadCallback('#divLinkGatewayMainContainer'+KlarnaPaymentsID+'---KP---'+arrKlarnaPaymentsIdentifiers[i])
+            )
+        }
+    }
+
+
+    jQuery('[data-gateway="klarna"]').click( function() {
+        var arrKPIdentifier = this.value.split("---");
+        document.getElementById("hdnKlarnaPaymentCategory").value = arrKPIdentifier[2];        
+    });
+
+
+    window.setTimeout('KlarnaPaymentsLoad()', 1000);
+</script>
+
+<script src="https://x.klarnacdn.net/kp/lib/v1/api.js" async></script>
+<input type="hidden" id="hdnKlarnaPaymentCategory"          name="hdnKlarnaPaymentCategory"      />
+<input type="hidden" id="hdnKlarnaClientToken"              name="hdnKlarnaClientToken"         value="[KLARNA_CLIENT_TOKEN]" />
+<input type="hidden" id="hdnKlarnaPaymentsID"               name="hdnKlarnaPaymentsID"          value="online-[id]" />
+<input type="hidden" id="hdnKlarnaAuthorizationToken"       name="hdnKlarnaAuthorizationToken"  value="" />
+<input type="hidden" id="hdnKlarnaFieldsValidated"          name="hdnKlarnaFieldsValidated"     value="[FIELDS_VALIDATED]" />
+
+<!--END: KLARNAPAYMENTSCRIPTS-->
+
+
+
+<!--START: FATTMERCHANT_SCRIPTS-->
+    <input type="hidden" id="hdnFattMerchantID"                 name="hdnFattMerchantID"          value="online-[id]" />
+    <input type="hidden" id="hdnFattMerchantToken"              name="hdnFattMerchantToken"/>
+    <input type="hidden" id="hdnFattMerchantCustomerToken"      name="hdnFattMerchantCustomerToken"/>
+    <input type="hidden" id="hdnFattMerchantError"              name="hdnFattMerchantError"/>
+    <input type="hidden" id="ff[id]_ocardnolast4"               name="ff[id]_ocardnolast4"/>
+    <script src="https://fattjs.fattpay.com/js/fattmerchant.js"></script>
+    <script>
+        // Init FattMerchant API
+        var fattJs = new FattJs('[FattMerchantWebPaymentsToken]', {
+          number: FattMerchant_CCNumber_Style,
+          cvv: FattMerchant_CVV2_Style
+        });
+        fattJs.showCardForm().then(handler => {
+          console.log('fattJs form loaded');
+        })
+        .catch(err => {
+          console.log('fattJs error init form ' + err);
+        });
+    </script>
+<!--END: FATTMERCHANT_SCRIPTS-->    
+
+<!--START: ADMIN_LOG_CHANGES-->
+<div class="alert alert-info fade in" id="admin_log_changes_block" style="display: none;">
+	<i class="fa-fw fa fa-history"></i>
+	<strong>History:</strong> (showing [AdminLogChangesResultsText] changes)<!--START: ADMIN_LOG_CHANGES_SHOWALL--> - <a href="javascript:getLogChanges(1);" style="color:#4db848">show all</a><!--END: ADMIN_LOG_CHANGES_SHOWALL--><br>
+    <div class="i-section">
+        <div class="smart-form">
+        <!--START: ADMIN_LOG_CHANGES_ROW-->
+	        <div class="row" id="admin_log_changes_row">
+                <section class="col col-12">
+                    [dt_log] by [userid]
+                    <!--START: ADMIN_LOG_CHANGES_LINK-->
+                    <a href="javascript:jQuery('#divLogChangesDetails_[id_log]').modal('show');" style="color:#4db848">updated [num_fields] fields</a>
+                    <!--END: ADMIN_LOG_CHANGES_LINK-->
+
+                    <!--START: ADMIN_LOG_CHANGES_TITLE-->
+                    updated: [desc_title]
+                    <!--END: ADMIN_LOG_CHANGES_TITLE-->
+                </section>
+
+                
+                <!--START: ADMIN_LOG_CHANGES_DETAILS-->
+                <div id="divLogChangesDetails_[id_log]" class="divLogChangesDetails modal fade" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title pull-left">Change Log #[id_log]</h5>
+                                <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="datagrid">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="logcolField">Field</th>
+                                                <th class="logcolFrom">From</th>
+                                                <th class="logcolTo">To</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!--START: ADMIN_LOG_CHANGES_DETAILS_ROW-->
+                                            <tr class="even">
+                                                <td class="logcolField">[data_field]</td>
+                                                <td class="logcolFrom">[data_field_before]</td>
+                                                <td class="logcolTo">[data_field_after]</td>
+                                            </tr>
+                                            <!--END: ADMIN_LOG_CHANGES_DETAILS_ROW-->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--END: ADMIN_LOG_CHANGES_DETAILS-->
+            </div>
+        <!--END: ADMIN_LOG_CHANGES_ROW-->
+        <!--START: ADMIN_LOG_CHANGES_SHOWALL2-->
+            <div class="row">
+                <section class="col col-6">
+                    <button onclick="javascript:getLogChanges(1);" class="btn btn-default"><i class="fa fa-history"></i> Load More</button>
+                </section
+            </div>
+        <!--END: ADMIN_LOG_CHANGES_SHOWALL2-->
+        </div>
+    </div>
+</div>
+
+<style>
+    .divLogChangesDetails .modal-header h5 {
+        margin: 0;
+    }
+    .divLogChangesDetails th,
+    .divLogChangesDetails td {
+        overflow-wrap: break-word;
+    }
+    .logcolField {
+        width: 24%;
+    }
+    .logcolFrom {
+        width: 38%;
+    }
+    .logcolTo {
+        width: 38%;
+    }
+</style>
+<!--END: ADMIN_LOG_CHANGES-->
+
+
+
+<!--START: STRIPEJS_SCRIPTS-->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        var stripe = Stripe('[StripeJSKey]');
+        var elements = stripe.elements();
+        var card = elements.create('card', { hidePostalCode: true, style: StripeJS_style });
+        card.mount('#card-element');
+    </script>
+    <input type="hidden" id="hdnStripeJS_ID"                    name="hdnStripeJS_ID" value="online-[id]" />
+    <input type="hidden" id="hdnStripeJS_Token"                 name="hdnStripeJS_Token"/>
+    <input type="hidden" id="ff[id]_ocardexpiresmonth"          name="ff[id]_ocardexpiresmonth"/>
+    <input type="hidden" id="ff[id]_ocardexpiresyear"           name="ff[id]_ocardexpiresyear"/>
+    <input type="hidden" id="ff[id]_ocardtype"                  name="ff[id]_ocardtype"/>
+    <input type="hidden" id="ff[id]_ocardnolast4"               name="ff[id]_ocardnolast4"/>
+<!--END: STRIPEJS_SCRIPTS-->
+<!--START: KLARNAUPSTREAMWIDGET-->
+<script async src="https://us-library.klarnaservices.com/merchant.js?uci=[klarna-upstream-uci]&country=[klarna-upstream-country]"></script>
+<klarna-placement id="klarna_upstream_widget" data-id="[klarna-upstream-data-id]" data-total_amount="[klarna-upstream-total-amount]"></klarna-placement>
+<!--END: KLARNAUPSTREAMWIDGET-->

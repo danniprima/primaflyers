@@ -1,0 +1,22 @@
+On the following 3 pages you'll find the design for this project.
+	The design is for a single list with elements that can expand and contract,
+		with only one element open at a time.
+	You can see that there are 2 types of items in the list, Firewall and Build
+
+	Firewall items 
+	 	can be accepted (page 1), or rejected (page2)
+	 Builds 
+	 	can succeed (page 3), or fail (not shown). 
+
+	Each page showing a different element expanded 	
+
+	Grey boxes (while not shown in the expanded state), 
+		represent either 
+		an item that will not run (as the entry has already failed like item 432460), 
+		or 
+		an item that has yet to run (as the item is currently working like item 432462) 
+
+	when an element is in the expanded state
+		each of the 4 content boxes should act as a button
+			 allowing the user to get more information about that item
+			 	These details will be shown in a pop-over content view on the page. 

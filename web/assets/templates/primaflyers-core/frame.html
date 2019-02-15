@@ -1,0 +1,427 @@
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>[TITLE]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    [META]
+
+    <!--START: FRAME_RSSFEEDS (KYLE FLAG)-->
+    <link rel="alternate" type="application/rss+xml" title="Featured Items (RSS 2.0)" href="[store_url]/rss.asp?type=home" />
+    <link rel="alternate" type="application/rss+xml" title="Products On Sale (RSS 2.0)" href="[store_url]/rss.asp?type=onsale" />
+    <link rel="alternate" type="application/rss+xml" title="New Releases (RSS 2.0)" href="[store_url]/rss.asp?type=newreleases" />
+    <link rel="alternate" type="application/rss+xml" title="Best Sellers (RSS 2.0)" href="[store_url]/rss.asp?type=bestsellers" />
+    <link rel="alternate" type="application/rss+xml" title="Latest Blog Posts (RSS 2.0)" href="[store_url]/rss.asp?type=blog" />
+    <!--END: FRAME_RSSFEEDS -->
+
+	<!--START: page_styles-->
+	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+	[page_styles]
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
+	<link rel="StyleSheet" href="assets/templates/[template]/css/default.css" type="text/css" />
+	<!--END: page_styles-->
+
+</head>
+<body class="[body_class]" data-currency="[currency_symbol]">
+	<section class="header-navigation">
+		<div class="navbar-header visible-sm visible-xs">
+			<a href="/view_cart.asp" class="navbar-toggle pull-left">
+				<span class="icon-basket"></span>
+				<span class="sr-only">View Cart</span>
+				<span class="new-basket"></span> [ITEMSINCART] / [SUBTOTAL]
+			</a>
+			<button type="button" id="mobile-menu-trigger2" class="navbar-toggle pull-right">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a href="#" class="navbar-toggle pull-right" data-toggle="modal" data-target="#searchModal">
+				<span class="sr-only">Search</span>
+				<span class="icon-search"></span>
+			</a>
+		</div>
+		<header class="site-header">
+			<div class="wide-container container">
+				<div class="row">
+					<div class="col-xs-2 hidden text-left head-mobile-nav">
+						<a href="#" id="mobile-menu-trigger">
+							<span class="icon-menu"></span>
+						</a>
+					</div>
+
+					<div class="col-md-4 col-sm-12 col-xs-12">
+						<div class="logo animated pulse">
+							<!--START: global_header-->
+							<h3 class="store-name">[storename]</h3>
+							<h4 class="store-slogan">[storeslogan]</h4>
+							<!--END: global_header-->
+						</div>
+					</div>
+
+					<div class="col-md-8 col-sm-12 col-xs-12">
+						<div class="useraccount animated fadeInDown clearfix">
+							<ul class="social-icons list-unstyled list-inline">
+								<li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel"><span class="icon-youtube"></span></a></li>
+								<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook"><span class="icon-facebook"></span></a></li>
+								<li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram"><span class="icon-instagram"></span></a></li>
+								<li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter"><span class="icon-twitter"></span></a></li>
+							</ul>
+
+							<ul class="utils list-unstyled list-inline hidden-sm hidden-xs">
+								<!--START: login-->
+								<li><a href="myaccount.asp"><i class="icon-user"></i> Log in or Create Account</a></li>
+								<!--END: login--> 
+								<!--START: username-->
+								<li> Hello [username]!<a href="myaccount.asp"><i class="icon-user"></i> My Account</a></li>
+								<li><a href="logout.asp"><i class="icon-user"></i> Log out</a></li>
+								<!--END: username-->
+								<li><a href="/view_cart.asp">Shopping Cart <i class="icon-basket"></i></a></li>
+							</ul>
+						</div>
+						
+						<div class="useraccount animated fadeInRight clearfix">
+                                                        <div class="freeshipping_txt">In-Store Pickup - Monday-Friday 9AM-7PM, Saturday 10AM - 3PM. </br> After Hours Pickup: Monday - Friday 7PM - 9PM, Saturday 3PM - 8PM. </div>
+						</div>
+						
+						<div class="row hidden-xs">
+							<div class="col-lg-offset-8 col-md-offset-6 col-lg-4 col-md-6">
+								<!--START: FRAME_SEARCH-->
+								<div id="searchBox" class="searchBox animated fadeInUp hidden-sm">
+									<form method="get" name="searchForm" action="search.asp">
+										<div class="search-form">
+											<input type="text" id="searchlight" name="keyword" value="" placeholder="[frame_search]" class="search-text form-control" />
+											<button type="submit" class="search-submit btn btn-default btn-inverse"><span class="icon-search"></span></button>
+										</div>
+									</form>
+									<div class="clear"></div>
+								</div>
+								<!--END: FRAME_SEARCH-->
+							</div>
+						</div>
+					</div>
+
+					<div class="col-xs-2 hidden text-left head-mobile-nav">
+						<a href="#" class="pull-right" data-toggle="modal" data-target="#searchModal">
+							<span class="sr-only">Search</span>
+							<span class="icon-search"></span>
+						</a>
+					</div>
+
+					<!--START: shopping_cart-->
+					<div id="floating-cart" class="floating-cart">
+						<a href="view_cart.asp" class="minicart-inner clearfix">
+							<span class="icon-basket cart-icon"></span>
+							<span class="cart-details">
+								<span class="minicart-items">[ITEMSINCART]</span> Items
+							</span>
+						</a>
+					</div>
+					<!--END: shopping_cart-->
+				</div>
+			</div>
+		</header>
+		<section class="navbar-wrapper hidden-xs">
+			<div class="container">
+				<nav class="navbar navbar-inverse navbar-static-top hidden-sm">
+					<!--START: FRAME_CATEGORY-->
+					<nav id="categories-outer" class="categories navbar-collapse collapse">
+						<ul id="categories" class="nav navbar-nav">
+							<!--START: CATEGORIES-->
+							<li class="[dropdown_class]">
+								<!--START: CATEGORY_FORMAT-->
+								<a href="view_category.asp?cat=CATID" >CATEGORY</a>
+								<!--END: CATEGORY_FORMAT-->
+								<!--START: SUB_CATEGORIES-->
+								<ul class="dropdown-menu animated">
+									<!--START: SUB_CATEGORY_FORMAT-->
+									<li><a href="view_category.asp?cat=CATID" class="subcat">CATEGORY</a></li>
+									<!--END: SUB_CATEGORY_FORMAT-->
+								</ul>
+								<!--END: SUB_CATEGORIEST-->
+							</li>
+							<!--END: CATEGORIES-->
+						</ul>
+					</nav>
+					<!--END: FRAME_CATEGORY-->
+				</nav>
+			</div>
+		</section>
+
+	</section>
+
+	<!--Get current page template-->
+	[page_content]
+	<!--/Get current page template-->
+
+	<!-- FOOTER -->
+	<footer class="site-footer">
+		<div class="container lazy">
+			<div class="row">
+				<div class="col-lg-9 col-md-9 col-sm-12">
+					<div class="row">
+						<div class="col-md-3 col-sm-3">
+							<div class="visible-xs extrapages-shower">
+								<a href="#extrapages" role="button" data-toggle="collapse" class="collapsed">Customer Service</a>
+							</div>
+							<ul id="extrapages" class="list-unstyled extrapages">
+								<li class="label hidden-xs">Customer Service</li>
+								<li class=""><a href="contact-us.html" class="menu-bottom"><i class="icon-play"></i>Contact Us</a></li>
+								<li class=""><a href="shipping.html" class="menu-bottom"><i class="icon-play"></i>Shipping Policy</a></li>
+								<li class=""><a href="turnaround.html" class="menu-bottom"><i class="icon-play"></i>Printing Turnaround</a></li>
+								<li class=""><a href="terms.html" class="menu-bottom"><i class="icon-play"></i>Terms and Conditions</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3 col-sm-3">
+							<div class="visible-xs extrapages-shower">
+								<a href="#extrapages2" role="button" data-toggle="collapse" class="collapsed">About Us</a>
+							</div>
+							<ul id="extrapages2" class="list-unstyled extrapages">
+								<li class="label hidden-xs">About Us</li>
+								<li class=""><a href="company-history.html" class="menu-bottom"><i class="icon-play"></i>Company History</a></li>
+								<li class=""><a href="printing-green.html" class="menu-bottom"><i class="icon-play"></i>Printing Green</a></li>
+								<li class=""><a href="our-process.html" class="menu-bottom"><i class="icon-play"></i>Our Process</a></li>
+								<li class=""><a href="privacy.html" class="menu-bottom"><i class="icon-play"></i>Privacy Policy</a></li>
+								<li class=""><a href="holidaySchedule" class="menu-bottom"><i class="icon-play"></i>Holiday Schedule</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3 col-sm-3">
+							<div class="visible-xs extrapages-shower">
+								<a href="#extrapages3" role="button" data-toggle="collapse" class="collapsed">My Account</a>
+							</div>
+							<ul id="extrapages3" class="list-unstyled extrapages">
+								<li class="label hidden-xs">My Account</li>
+								<li class=""><a href="myaccount.asp" class="menu-bottom"><i class="icon-play"></i>Sign In</a></li>
+								<li class=""><a href="myaccount.asp" class="menu-bottom"><i class="icon-play"></i>My Account</a></li>
+								<li class=""><a href="myaccount.asp" class="menu-bottom"><i class="icon-play"></i>Orders History</a></li>
+							</ul>
+						</div>
+
+						<div class="col-md-3 col-sm-3">
+							<div class="visible-xs extrapages-shower">
+								<a href="#extrapages4" role="button" data-toggle="collapse" class="collapsed">Helpful Resources</a>
+							</div>
+							<ul id="extrapages4" class="list-unstyled extrapages">
+								<li class="label hidden-xs">Helpful Resources</li>
+								<li class=""><a href="print-101.html" class="menu-bottom"><i class="icon-play"></i>Print-101</a></li>
+								<li class=""><a href="faq.html" class="menu-bottom"><i class="icon-play"></i>FAQ</a></li>
+								<li class=""><a href="design-ideas.html" class="menu-bottom"><i class="icon-play"></i>Design Ideas</a></li>
+							</ul>
+						</div>
+
+					</div>
+
+				</div>
+				<div class="col-lg-3 col-md-3 col-sm-12">
+					<!--START: FRAME_MAILLIST-->
+					<div class="mailist-box ajax-mailinglist" data-callfront="mailinglist_callfront" data-callback="mailinglist_response">
+						<form method="post" name="mailing" action="mailing_list_ajax.asp">
+							<div class="row">
+								<div class="col-sm-12 mail_fluff">
+									<h3>Be the First to Know</h3>
+									<p>Get all the latest information on Events, Sales and Offers. Sign up for newsletter today.</p>
+								</div>
+								<div class="col-sm-12">
+									<h3>[frame_mailinglist]</h3>
+								</div>
+								<div class="col-sm-12">
+									<div class="mailinglist-form clearfix">
+										<input class="mailinglist-input form-control" type="text" name="email" placeholder="Enter your email address ..." autocomplete="off" />
+										<button class="mailinglist-submit btn btn-default btn-inverse" type="submit" name="www">
+											<span id="mailing-btn-txt "><i class="icon-mail-alt"></i>[mailinglist_button]</span>
+											<span id="mailing-btn-load" class="mailing-btn-load icon-spin2 animate-spin hidden"></span>
+										</button>
+									</div>
+								</div>
+								<div class="col-sm-12">
+									<div class="clearfix maillist-options">
+										<div class="subscribe"><input id="list_subscribe" type="radio" name="subscribe" value="1" checked="checked"> <label for="list_subscribe">Subscribe</label></div>
+										<div class="subscribe"><input id="list_unsubscribe" type="radio" name="subscribe" value="0"> <label for="list_unsubscribe">Unsubscribe</label></div>
+									</div>
+								</div>
+							</div>
+						</form>
+						<div id="mailinglist-response" class="mailinglist-response">
+							<div class="mailinglist-error hidden"><span class="icon-attention"></span> <strong>Ooop!</strong> The email you entered isn't valid.</div>
+							<div class="mailinglist-subscribed hidden"><span class="icon-ok"></span> <strong>WooHoo!</strong> You subscribed successfully.</div>
+							<div class="mailinglist-unsubscribed hidden"><span class="icon-ok"></span> <strong>Ok!</strong> You're unsubscribed.</div>
+						</div>
+					</div>
+					<div class="clearfix"></div>
+					<!--END: FRAME_MAILLIST-->
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="mini-logo"><a href="/"><img src="/assets/images/logos/mini-logo.png" alt="PrimaFlyers.com" class="img-responsive" /></a></div>
+						<!--START: social_icons-->
+						<ul class="social-icons list-unstyled list-inline">
+							<li class="social-icons-label">Follow Us:</li>
+							<!--START: social_link_facebook-->
+							<li><a href="[social_link_facebook_url]" class="facebook" target="_blank" title="Like Us on Facebook"><span class="icon-facebook"></span></a></li>
+							<!--END: social_link_facebook-->
+							<!--START: social_link_twitter-->
+							<li><a href="[social_link_twitter_url]" class="twitter" target="_blank" title="Follow Us on Twitter"><span class="icon-twitter"></span></a></li>
+							<!--END: social_link_twitter-->
+							<!--START: social_link_googleplus-->
+							<li><a href="[social_link_googleplus_url]" class="gplus" target="_blank" title="Follow Us on Google+"><span class="icon-gplus"></span></a></li>
+							<!--END: social_link_googleplus-->
+							<!--START: social_link_youTube-->
+							<li><a href="[social_link_youTube_url]" class="youtube" target="_blank" title="Subscribe to our Channel"><span class="icon-youtube"></span></a></li>
+							<!--END: social_link_youTube-->
+							<!--START: social_link_pinterest-->
+							<li><a href="[social_link_pinterest_url]" class="pinterest" target="_blank" title="Follow Us on Pinterest"><span class="icon-pinterest"></span></a></li>
+							<!--END: social_link_pinterest-->
+							<!--START: social_link_instagram-->
+							<li><a href="[social_link_instagram_url]" class="instagram" target="_blank" title="Follow Us on Instagram"><span class="icon-instagram"></span></a></li>
+							<!--END: social_link_instagram-->
+							<!--START: social_link_tumblr-->
+							<li><a href="[social_link_tumblr_url]" class="tumblr" target="_blank" title="Follow Us on Tumblr"><span class="icon-tumblr"></span></a></li>
+							<!--END: social_link_tumblr-->
+							<!--START: social_link_blog-->
+							<li><a href="[social_link_blog_url]" class="blog" target="_blank" title="Subscribe to our Blog"><span class="icon-rss"></span></a></li>
+							<!--END: social_link_blog-->
+						</ul>
+						<!--END: social_icons-->
+						
+						<ul class="payment-icons list-unstyled list-inline">
+							<li><span class="icon-cc-visa"></span></li>
+							<li><span class="icon-cc-mastercard"></span></li>
+							<li><span class="icon-cc-amex"></span></li>
+							<li><span class="icon-cc-discover"></span></li>
+							
+						</ul>
+						
+					</div>
+					<div class="col-sm-12">
+						<!--START: global_footer-->
+						<div class="global-footer lazy">[GLOBAL_FOOTER]</div>
+						<!--END: global_footer-->
+						<div class="copyright_txt lazy">
+							<p>[frame_copyright1]</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <a href="#" class="scrollToTop"><i class="icon-angle-up icon-2x"></i> <span>TOP</span></a>
+
+    <nav id="mobile-menu" class="mobile-menu">
+        <div class="mobile-menu-inner">
+            <div class="mobile-menu-close">
+                <a href="#"></a>
+            </div>
+            <div class="mobile-menu-widget comms">
+                <h3>Contact Us</h3>
+				<div><a class="" href="tel:[store_phone]">Ph: [store_phone]</a></div>
+				<div><a class="" href="mailto:[store_email]">Email: [store_email]</a></div>
+            </div>
+            <div class="mobile-menu-widget">
+                <h3>Menu Links</h3>
+                <div id="mobile-menulinks">
+					<ul id="menulinks" class="nav navbar-nav">
+						<!--START: menuitems_view-->
+						<!--START: TOP_LINK_FORMAT-->
+						<li><a href="infopage.asp?page=[link_id]" class="menu" target="[link_target]">[link_name]</a></li>
+						<!--END: TOP_LINK_FORMAT-->
+						<!--END: menuitems_view-->
+					</ul>
+                </div>
+            </div>
+            <div class="mobile-menu-widget">
+                <h3>Categories</h3>
+                <div id="mobile-categories"></div>
+            </div>
+        </div>
+    </nav>
+
+	<!--START: quickview_modal-->
+	[quickview_modal]
+	<!--END: quickview_modal-->
+   
+    <!-- Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-labelledby="searchModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="searchLabel">Store Search</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="MsearchBox" class="searchBox">
+                        <form method="get" name="searchForm" action="search.asp">
+                            <div class="search-form">
+                                <input type="text" id="" name="keyword" value="" placeholder="[frame_search]" class="search-text form-control" />
+                                <button type="submit" class="search-submit btn btn-default btn-inverse"><span class="icon-search"></span></button>
+                            </div>
+                        </form>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/fontello.css" type="text/css" />
+    <link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/animation.css" type="text/css" />
+    <link rel="stylesheet" href="/assets/templates/common-core/lib/animate-me/animate.css" type="text/css" media="screen" />
+
+	<!--START: page_scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="assets/templates/common-core/js/core.js"></script>
+    <script src="assets/templates/[template]/js/scrollreveal.min.js?vcart=7.6.0"></script>
+    <script src="assets/templates/[template]/js/jquery.hoverIntent.js"></script>
+    <script src="assets/templates/[template]/js/main.js"></script>
+    
+    <script type='text/javascript' data-cfasync='false'>window.purechatApi = { l: [], t: [], on: function () { this.l.push(arguments); } }; (function () { var done = false; var script = document.createElement('script'); script.async = true; script.type = 'text/javascript'; script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; document.getElementsByTagName('HEAD').item(0).appendChild(script); script.onreadystatechange = script.onload = function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete')) { var w = new PCWidget({c: 'fc0efa88-3430-409d-8593-aae6f5eb74e8', f: true }); done = true; } }; })();</script>
+    
+<!-- BEGIN PRIVY WIDGET CODE -->
+<script type='text/javascript'> var _d_site = _d_site || 'DE44F9495A9B759AD3294701'; </script>
+<script src='https://widget.privy.com/assets/widget.js'></script>
+<!-- END PRIVY WIDGET CODE -->
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/5192892.js"></script>
+<!-- End of HubSpot Embed Code -->
+	
+<!-- Hotjar Tracking Code for www.primaflyers.com -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:1123929,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
+<!-- Start of MailChimp Embed Code -->
+<script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/0ab0f8135f619f1444ee71c78/cd2a0222dbea502eace497d2f.js");</script>
+
+	[page_scripts]
+	<!--END: page_scripts-->
+
+    <!--START: quicksearch-->
+    <link rel="stylesheet" href="assets/templates/common-html5/quicksearch/quicksearch.css" type="text/css" media="screen" />
+    <script type="text/javascript" src="assets/templates/common-html5/quicksearch/jquery.quicksearch.js"></script>
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery('#searchlight').searchlight('/search_quick.asp');
+        });
+    </script>
+    <!--END: quicksearch-->
+</body>
+</html>

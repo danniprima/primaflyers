@@ -1,0 +1,76 @@
+.category-header {
+    margin-top: 0;
+}
+.category-header h2,
+.category-header h3,
+.category-header h4 { margin: 0 }
+
+.rma-section {
+    margin-bottom: 30px;
+}
+.rma-titles {
+    text-transform: uppercase;
+}
+.rma-details-row {
+    margin-bottom: 5px;
+}
+.rmacomm ul {
+    padding-left: 20px;
+}
+    .rmacomm ul > li {
+        margin-bottom: 10px;
+    }
+@media print {
+	* {
+		font-family: Arial;
+		box-sizing: border-box;
+	}   
+    .no-print, .no-print *
+    {
+        display: none !important;
+    }
+
+    .billingBlock, .shippingInfoBlock {
+        min-height: 10px !important;
+    }
+
+    #orderHistoryView h4 {
+        margin: 10px 0px;
+    }
+	.billinginfo-block,
+	.shippinginfo-block {
+		width: 50%;
+		float: left;
+	}
+	.billingBlock, .shippingInfoBlock {
+		border: none;
+	}
+    .print-btn-div {
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: 991px) {
+    .rma-details-row > div {
+        margin-bottom: 5px;
+        line-height: 1.5;
+    }
+    .rma-details-row {
+		padding: 10px 0;
+		margin: 15px auto;
+		-moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		-webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	}
+	.rma-details-row:nth-child(2n) {
+		background: #EAE9E9;
+		background: rgba(234, 233, 233, 0.3);
+		background-color: #EAE9E9;
+		background-color: rgba(234, 233, 233, 0.3);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+	}
+    .print-btn-div {
+        margin-top: 30px;
+    }
+}

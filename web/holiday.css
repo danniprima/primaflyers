@@ -1,0 +1,235 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Reset */
+
+* {
+
+}
+
+html, body {
+
+}
+
+body {
+	background-color: #f6f6f6;
+}
+
+/* Structure */
+
+#wrapper {
+	background-color: #ffffff;
+	background-image: url('holiday_images/collage.jpg');
+	background-position: top right;
+	background-repeat: no-repeat;
+	border: 1px solid #cccccc;
+	clear: both;
+	float: left;
+	left: 50%;
+	margin: 10px auto 40px -480px;
+	position: absolute;
+	width: 960px;
+}
+
+#header {
+	float: left;
+	width: 960px;
+}
+
+#logo {
+	clear: both;
+	color: #B32830;
+	float: left;
+	font-size: 42px;
+	line-height: 60px;
+	margin: 60px 0px 0px 40px;
+	width: 300px;
+}
+
+#tagline {
+	clear: both;
+	color: #B32830;
+	float: left;
+	font-size: 32px;
+	font-weight: normal;
+	margin: 30px 0px 0px 40px;
+	width: 300px;
+}
+
+#pricetag {
+	background-image: url('holiday_images/pricetag.jpg');
+	background-repeat: no-repeat;
+	clear: both;
+	float: left;
+	height: 182px;
+	margin-top: 10px;
+	text-indent: -9999px;
+	width: 479px;
+}
+
+#intro {
+	background-color: #F3F0EB;
+	clear: both;
+	float: left;
+	margin: 50px 30px 0px 30px;
+	width: 900px;
+}
+
+#intro_title {
+	background-color: #778E1C;
+	border: 1px solid #A6B36C;
+	color: #DEDACB;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+	margin-left: 10px;
+	padding: 14px 12px 14px 12px;
+	text-transform: uppercase;
+}
+
+#intro_text {
+	margin: 18px 0px 0px 20px;
+}
+
+#intro_text ul {
+	list-style-type: none;
+}
+
+#intro_text ul li.title {
+	color: #E3B537;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 4px;
+}
+
+#intro_text ul li {
+	margin-bottom: 10px;
+}
+
+#products {
+	clear: both;
+	float: left;
+	margin: 0px 30px 15px 30px;
+	width: 900px;
+}
+
+.product_block {
+	clear: both;
+	float: left;
+	border-bottom: 2px solid #e2e7e9;
+	padding: 15px 0px 50px 0px;
+}
+
+.product {
+	float: left;
+	margin-top: 50px;
+	width: 380px;
+}
+
+.prod_top {
+	background-color: #F3F0EB;
+	clear: both;
+	float: left;
+	margin: 10px 0px 10px 0px;
+	width: 380px;
+}
+
+.prod_title {
+	background-color: #778E1C;
+	border: 1px solid #A6B36C;
+	color: #000000;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	margin-left: 10px;
+	padding: 7px 12px 7px 12px;
+	text-transform: capitalize;
+}
+
+.prod_d_left {
+	font-size: 12px;
+	float: left;
+	padding: 20px 0px 5px 15px;
+	text-align: left;
+	width: 170px;
+}
+
+.prod_d_right {
+	font-size: 12px;
+	float: right;
+	padding: 20px 0px 5px 10px;
+	text-align: center;
+	width: 170px;
+}
+
+.prod_image {
+	clear: both;
+	min-height: 100px;
+}
+
+.prod_i_left {
+	float: left;
+	text-align: center;
+	width: 190px;
+}
+
+.prod_i_right {
+	float: left;
+	text-align: center;
+	width: 190px;
+}
+
+.prod_select {
+	clear: both;
+	text-align: center;
+	width: 380px;
+	margin: 20px 0px 8px 0px;
+}
+
+a.prod_button {
+	background-color: #B42D34;
+	border: 1px solid #EAC8CA;
+	color: #E7E6DA;
+	cursor: pointer;
+	display: block;
+	margin: 0px auto 0px auto;
+	padding: 6px;
+	text-align: center;
+	text-decoration: none;
+	width: 120px;
+}
+
+a.prod_button:hover {
+	color: #000000;
+	text-decoration: none;
+}
+
+.vertical_line {
+	background-color: #ffffff;
+	background-image: url('holiday_images/vertical-line.jpg');
+	background-position: top center;
+	background-repeat: no-repeat;
+	float: left;
+	width: 140px;
+	min-height: 375px;
+}
+
+#footer {
+	background-color: #F3F0EB;
+	clear: both;
+	float: left;
+	font-size: 12px;
+	margin: 30px 0px 30px 0px;
+	padding: 15px 30px 60px 30px;
+	width: 900px;
+}
+
+#cred {
+	float: left;
+	text-align: left;
+}
+
+#copy {
+	float: right;
+	text-align: right;
+}

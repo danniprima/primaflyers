@@ -1,0 +1,8 @@
+/*top-grafx:: Controls the position/visibility of the Graffiti type design in the header of this template.*/		 
+.top-grafx {
+	display: block;
+	z-index: 2;
+	position: absolute;
+	right: 25;
+	bottom: 0;
+}

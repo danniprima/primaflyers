@@ -1,0 +1,257 @@
+<!--START: BODY_HEADER-->
+<section class="breadcrumnb no-print">
+	<div class="container">
+	    <ol itemscope="" itemtype="http://schema.org/BreadcrumbList" class="clearfix">
+	        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/">[frame_breadcrumb-home]</a></li>
+	        <li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><span>[rma_header-rmatitle]</span></li>
+	    </ol>
+    </div>
+</section>
+<!--END: BODY_HEADER-->
+
+<section class="page_header no-print">
+	<div class="container">
+		<h1 class="page_heading">[rma_header-rmatitle]</h1>
+		<!--START: myAccount-->
+		<div class="button">
+		    <a href="myaccount.asp" class="icon-btn btn btn-link"> <i class="icon-left"></i> [account_backtomyaccount-text]</a>
+		</div>
+		<!--END: myAccount-->
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	function printThis(){
+		document.formu.action = "my_rma.asp?p=1";
+		document.formu.target = "_blank";
+		document.formu.submit(); 
+	}
+</script>
+<form name="formu" id="formu" action="" method="post">
+	<input type="hidden" name="oid" id="oid" value="[oNumber]" />
+	<input type="hidden" name="r" id="r" value="[RmaNumber]" />
+</form>
+
+<section id="myRma" class="page-content">
+	<div class="container">
+        <div class="content-area">
+
+            <!--START: CATEGORY_HEADER-->
+            <div class="category-header no-print">[CONTENT]</div>
+            <!--END: CATEGORY_HEADER-->
+
+			<!--START: RMA-->
+
+            <div class="rma-section row">
+                <div class="col-md-6">
+                    <div class="header">
+                        <h4 class="page_heading">Customer Info</h4>
+                    </div>
+                    <div class="row viewRma viewRmaOption">
+                        <div class="col-sm-6">
+                            <label class="rma-ci-label">[rma_header-rmacustomername]</label>
+                            <div class="rma-ci-text">[Customer]</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="rma-ci-label">[rma_header-rmaordernumber]</label>
+                            <div class="rma-ci-text">[oid2]</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 print-btn-div">
+                    <div class="clearfix">
+                        <div class="header">
+                            <h4 class="page_heading">[rma_header-rmanumber]&nbsp;[RmaNumber]</h4>
+                        </div>
+
+                        <!--START: print-->
+                        <div class="rma-print-btn no-print">
+                            <a href="javascript:printThis();" class="icon-btn btn btn-default icon-btn-down"><i class="icon-print"></i> Print</a>
+                        </div>
+                        <!--END: print-->
+                    </div>
+                </div>
+            </div>
+
+			<div class="rma-section viewRma">
+                <div class="header">
+                    <h4 class="page_heading">[rma_header-rmaorderitems]</h4>
+                </div>
+
+                <div class="row rma-titles hidden-xs hidden-sm">
+                    <div class="col-md-2">
+                        <label for="rma-id">[rma_header-rmaorder-item-id]</label>
+                    </div>
+                    <div class="col-lg-5 col-md-4">
+                        <label for="rma-desc">[rma_header-rmaorder-item-description]</label>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="rma-unitprice">[rma_header-rmaorder-item-unitprice]</label>
+                    </div>
+                    <div class="col-lg-1 col-md-2">
+                        <label for="rma-qty">[rma_header-rmaorder-item-qty]</label>
+                    </div>
+                    <div class="col-lg-1 col-md-2">
+                        <label for="rma-qtyrtn">[rma_header-rmaorder-item-qtyrtn]</label>
+                    </div>
+                    <div class="col-md-1 hidden-md">
+                        <label for="rma-qtyrcvd">[rma_header-rmaorder-item-qtyrcvd]</label>
+                    </div>
+                </div>
+
+                <!--START: items-->
+                <div class="row rma-details-row">
+                    <div class="col-md-2">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-id]</label>
+                            <div class="col-xs-8 col-md-12">[Id] <input type="hidden" name="Item[idx]" id="Hidden1" value="[IdItem]" /></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-4">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-description]</label>
+                            <div class="col-xs-8 col-md-12">[Description]</div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-unitprice]</label>
+                            <div class="col-xs-8 col-md-12">[uPrice]</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-2">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-qty]</label>
+                            <div class="col-xs-8 col-md-12">[Qty]</div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 col-md-2">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-qtyrtn]</label>
+                            <div class="col-xs-8 col-md-12">[qr]</div>
+                        </div>
+                    </div>
+                    <div class="col-md-1 hidden-md">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-item-qtyrcvd]</label>
+                            <div class="col-xs-8 col-md-12">[qre]</div>
+                        </div>
+                    </div>
+                </div>
+                <!--END: items-->
+			</div>
+
+
+			<div class="rma-section viewRma viewRmaOption">
+                <div class="header">
+                    <h4 class="page_heading">[rma_header-rmaorder-rtn-option]</h4>
+                </div>
+
+                <div class="row rma-titles hidden-sm hidden-xs">
+                    <div class="col-md-4">
+                        <label for="rma-reason">[rma_header-rmaorder-rtn-reason]</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="rma-method">[rma_header-rmaorder-rtn-method]</label>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="rma-status">[rma_header-rmaorder-rtn-status]</label>
+                    </div>
+                </div>
+
+                <!--START: options-->
+                <div class="row rma-details-row">
+                    <div class="col-md-4">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-rtn-reason]</label>
+                            <div class="col-xs-8 col-md-12">[Reason]</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-rtn-status]</label>
+                            <div class="col-xs-8 col-md-12">[Method]</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4">[rma_header-rmaorder-rtn-status]</label>
+                            <div class="col-xs-8 col-md-12">[Status]</div>
+                        </div>
+                    </div>
+                </div>
+                <!--END: options-->
+			</div>
+
+			<div class="rma-section viewRma rmaComments">
+                <div class="header">
+                    <h4 class="page_heading">RMA Comments</h4>
+                </div>
+
+                <div class="row rma-titles hidden-sm hidden-xs">
+                    <div class="col-md-6">
+                        <label for="rmacomm">[rma_header-rmacomments]</label>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="staffcomm">[rma_header-staffcomments]</label>
+                    </div>
+                </div>
+
+                <div class="row rma-details-row">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4" for="rmacomm">[rma_header-rmacomments]</label>
+                            <div class="col-xs-8 col-md-12">
+                                <div class="rmacomm">
+                                    <!--START: comments-->
+                                    [comments]
+                                    <!--END: comments-->&nbsp;
+                                </div>
+                                <div class="rmacomm">
+                                    <ul>
+                                        <!--START: rmafiles-->
+                                        <li><a href="filesaction.asp?action=download&folder=rma&file=[item-name]&hid=[filehash]"><i class="icon-angle-right"></i>[rmafile-name]</a> </li>
+                                        <!--END: rmafiles-->
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clearfixfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row">
+                            <label class="visible-xs visible-sm col-xs-4" for="staffcomm">[rma_header-staffcomments]</label>
+                            <div class="col-xs-8 col-md-12">
+                                
+                                <div class="staffcomm">
+                                    <!--START: staffComments-->
+                                    [staffcomments]
+                                    <!--END: staffComments-->&nbsp;
+                                </div>
+                                <div class="staffcomm">
+                                    <ul>
+                                        <!--START: rmafilesStaff-->
+                                        <li><a href="filesaction.asp?action=download&folder=rma&file=[item-name-staff]&hid=[filehash]"><i class="icon-angle-right"></i>[rmafile-name-staff]</a></li>
+                                        <!--END: rmafilesStaff-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<!--END: RMA-->
+
+			<!--START: CATEGORY_FOOTER-->
+			<div class="category-footer" id="myRmaFooter">[CONTENT]</div>
+			<!--END: CATEGORY_FOOTER-->
+	    </div>
+    </div>
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/css/checkout_step4.css" type="text/css" media="all" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/my_rma.css" type="text/css" media="all" />
+<!--END: template_styles-->

@@ -1,0 +1,195 @@
+<form action="view_category.asp?cat=[catid]" method="post" name="frmsortby" id="frmsortby">
+  <div class="page_headers">[categoryname]</div>
+  
+  <!--START: BODY_HEADER-->
+  <div class="page_crumbs">[CATEGORY_FULLLINE]</div>
+  <!--END: BODY_HEADER-->
+  
+  <div class="page_text">
+    <table width="760" cellspacing="0" cellpadding="2" border="0">
+      
+      <!--START: CATEGORY_HEADER-->
+      <tr>
+        <td class="data">[CONTENT]</td>
+      </tr>
+      <tr>
+        <td class="data"> </td>
+      </tr>
+      <!--END: CATEGORY_HEADER--> 
+      <!--START: SUB_CATEGORIES-->
+      <tr>
+        <td><table cellspacing="0" cellpadding="2" border="0">
+            <tr>
+              <td><div class="page_headers_sub">[category_Header-subcategories]</div></td>
+            </tr>
+            <!--START: SUB_CATEGORIES_FORMAT-->
+            <td><table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td><div class="cat-item">
+                  <div class="cat-item-link"> 
+                    <!--START: SUB_CATEGORY_NAME--> 
+                    <a href="view_category.asp?cat=[CATID]">[SUB_CATEGORY_NAME]</a> 
+                    <!--END: SUB_CATEGORY_NAME--> 
+                  </div>
+                  <div class="cat-item-price"> </div>
+                  <div class="cat-item-more"> <a href="view_category.asp?cat=[CATID]" style="text-transform: uppercase;">More Details</a> </div>
+                </div></td></tr></table></td>
+              <!--END: SUB_CATEGORIES_FORMAT-->
+          </table></td>
+      </tr>
+      <!--END: SUB_CATEGORIES--> 
+      <!--START: catFilterMainBlock--> 
+      <!-- filter block starts here-->
+      <tr>
+        <td><!--START: catFilter-->
+          
+          <table cellpadding="0" cellspacing="0">
+            <tr>
+              <td class="font1">[category_Header-Filters] 
+                <!--START: catFilterCrumb--> 
+               : 
+                <!--START: catFilterCrumbItem--> 
+                <a href="#" onClick="javascript:setCatFilter('[strFilter]', document.frmsortby, true);">[strfiltername]</a> 
+                <!--END: catFilterCrumbItem--> 
+                <!--END: catFilterCrumb--></td>
+              <td class="item" align="right"><!--START: catFilterRemoveLink--> 
+                <a href="#" onClick="javascript:removeCatFilter();" style="color: #b53592; font-weight:bold">[category_Header-RemoveFilters]</a> 
+                <!--END: catFilterRemoveLink--></td>
+            </tr>
+          </table>
+          
+          <!--END: catFilter-->
+          
+          <table cellspacing="0" cellpadding="2" border="0">
+            <tr>
+              <td colspan="2"><table cellspacing="0" cellpadding="2" border="0">
+                  <tr> 
+                    <!--START: catFilter_Filter-->
+                    <td class="item" valign="top" width="10%" nowrap><!-- the filter title can be outside: [catFilterName]--> 
+                      <!-- Use this block if you want to show filters as a list--> 
+                      <b>Filter by [catFilterName]</b><br>
+                      
+                      <!--START: catFilter_Filter_Item--> 
+                      <a href="#" onClick="setCatFilter('[catFilterId]-*-[catFilterName]-*-[catFilterChildId]-*-[catFilterChildName]-*-[catid]-*-', document.frmsortby, false);">[catFilterChildName] ([numItems])</a><br>
+                      
+                      <!--END: catFilter_Filter_Item--> 
+                      <!---------------------------------------------------------> 
+                      <!-- Use this block if you want to show filters as a dropdown--> 
+                      <!--<select name="catFilter" id="Select1" onchange="setCatFilter(this.value, document.frmsortby, false);">--> 
+                      <!--<option value="">Filter by [catFilterName]</option>--> 
+                      <!--START: catFilter_Filter_Item--> 
+                      <!--<option value="[catFilterId]-[catFilterName]-[catFilterChildId]-[catFilterChildName]-[catid]-">[catFilterChildName] ([numItems])</option>--> 
+                      <!--END: catFilter_Filter_Item--> 
+                      <!--</select>--> 
+                      <!---------------------------------------------------------></td>
+                    <!--END: catFilter_Filter-->
+                    <td></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table>
+          <input type="hidden" name="hdnCatFilter" id="hdnCatFilter" value="[catFilter]">
+          <script>
+					function setCatFilter(strFilter, objForm, removeSubsequent)
+					{
+						if (removeSubsequent)
+						{
+							//alert(strFilter);
+							objForm.hdnCatFilter.value = strFilter;
+						}
+						else
+						{
+							objForm.hdnCatFilter.value = objForm.hdnCatFilter.value + '@' + strFilter;
+						}
+						//alert(objForm.hdnCatFilter.value);
+						objForm.submit();
+					}
+					function removeCatFilter()
+					{
+						var objForm = document.frmsortby;
+						objForm.hdnCatFilter.value = "";
+						objForm.submit();
+					}
+				</script></td>
+      </tr>
+      <!-- filter block ends here--> 
+      <!--END: catFilterMainBlock-->
+      <tr>
+        <td><!--START: ITEMS-->
+          
+          <table cellspacing="0" cellpadding="0" border="0">
+            <tr>
+              <td colspan="5"><div class="page_headers_sub"> Viewing [productnumber] Items
+                  <div class="sort-by-frame"> 
+                    <!--START: sortbylist-->
+                    <select name="sortby" onChange="frmsortby.submit();" class="txtBoxStyle">
+                      
+                    [sortbylist]
+                  
+                    </select>
+                    <!--END: sortbylist--> 
+                  </div>
+                </div></td>
+            </tr>
+            <tr>
+              <td colspan="5"><!--START: CATEGORY_ITEMS--> 
+                
+                <!--START: ITEM_TEMPLATE_0-->
+                
+                <div class="cat-item">
+                  <div class="cat-item-link"> <a href="product.asp?itemid=[catalogid]">[name]</a> </div>
+                  <div class="cat-item-price">  
+                    <!--START: ITEMPRICE--> 
+                    [ITEMPRICE] 
+                    <!--END: ITEMPRICE--> 
+                    <!--START: SALEPRICE--> 
+                    <!--<s>[product_yourprice] [ITEMPRICE]</s> [product_onsale]: -->[ITEMSALEPRICE] 
+                    <!--END: SALEPRICE--> 
+                  </div>
+                  <div class="cat-item-more"> <a href="product.asp?itemid=[catalogid]">More Details</a> </div>
+                </div>
+                
+                <!--END: ITEM_TEMPLATE_0--> 
+                
+                <!--END: CATEGORY_ITEMS--></td>
+            </tr>
+          </table>
+          
+          <!--END: ITEMS--></td>
+      </tr>
+      <tr>
+        <td><!--START: FEATURE_MENU--> 
+          <!--START: FEATURE_ITEMS--> 
+          <!--START: FEATURE_ITEM_TEMPLATE_0-->
+          
+          <div class="featured-item">
+            <div class="featured-item-thumb"> <a href="product.asp?itemid=[catalogid]&catid=[catid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=150&maxy=0" border="0" alt="[name]" ></a> </div>
+            <div class="featured-item-title"> <a href="product.asp?itemid=[catalogid]&catid=[catid]">[name]</a> </div>
+            <div class="featured-item-price"> 
+              <!--START: ITEMPRICE--> 
+              <span class="price">[ITEMPRICE]</span> 
+              <!--END: ITEMPRICE--> 
+              <!--START: SALEPRICE--> 
+              <span class="price">Sale! [ITEMSALEPRICE]</span> 
+              <!--END: SALEPRICE--> 
+            </div>
+            <div class="featured-item-button"> <a href="product.asp?itemid=[catalogid]&catid=[catid]">More Details</a> </div>
+          </div>
+          
+          <!--END: FEATURE_ITEM_TEMPLATE_0--> 
+          <!--END: FEATURE_ITEMS--> 
+          <!--END: FEATURE_MENU--></td>
+      </tr>
+      <!--START: CATEGORY_FOOTER-->
+      <tr>
+        <td class="data">[CONTENT] </td>
+      </tr>
+      <!--END: CATEGORY_FOOTER-->
+    </table>
+  </div>
+  
+  <!-- Begin Right Content -->
+  <div id="right_content"> </div>
+  <!-- End Content Right -->
+  
+</form>

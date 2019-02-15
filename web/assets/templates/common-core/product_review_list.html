@@ -1,0 +1,72 @@
+<style type="text/css">
+html, body {
+	background: #FFF;
+	width: 100%;
+	height: 100% !important;
+    padding: 0;
+}
+</style>
+<script type="text/javascript" src="assets/templates/common-html5/js/jquery.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	jQuery('#productReviewList .button a').addClass('icon-btn icon-btn-prev');
+});
+</script>
+
+<section id="productReviewList">
+    <!--START: reviewsBlock-->
+	<div id="reviewsBlock" class="reviewsBlock" itemprop="review" itemscope itemtype="http://schema.org/Review">
+		<!--START: user_reviews-->
+		<div class="user_reviews clearfix">
+			<div class="star-rating">
+				<span class="reviews-stars rating-[rating]"></span>
+			</div>
+			<div class="review-info">
+				<div class="review-shortDesc" itemprop="name">[short_review]</div>
+				<div class="review-longDesc" itemprop="description">[long_review]</div>
+				<div class="review-images">
+					<!--START: review_image-->
+					<a href="assets/product_review_files/[item-name]" data-gallery="review_image" class="MagicZoom" title="[short_review]" data-options="zoomCaption: bottom; hint: off">
+						<img itemprop="image" src="thumbnail.asp?file=assets/product_review_files/[item-name]&maxx=100&maxy=100" alt="" class="img-responsive" />
+					</a>
+					<!--END: review_image-->
+				</div>
+				<!--START: rev_allowratings-->
+				<div class="rev_allowratings">
+					[reviews_helpful]&nbsp;
+					<input class="btn btnYes btn-default" type="button" value="[reviews_helpyes]" onclick="updateRevStats('[r_id]',[rev_id], 1)" />
+					<input class="btn btnNo btn-default" type="button" value="[reviews_helpno]" onclick="updateRevStats('[r_id]',[rev_id],-1)" />
+					<span id="spnReview[rev_id]"><!--START: rev_helpcount--><strong>[rev_helpful]&nbsp;[reviews_of]&nbsp;[rev_votes]</strong>&nbsp;<em>[reviews_found-helpful]</em><!--END: rev_helpcount--></span>
+				</div>
+				<!--END: rev_allowratings-->
+				<em class="reviewed-by">
+					Reviewed by:&nbsp;<!--START: review_verified--><span class="verified-buyer">[reviews_verified-buyer]</span>&nbsp;<!--END: review_verified--><span itemprop="author">[user_name]</span> from [user_city] on [review_date]
+				</em>
+				<div style="display: none;" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating"> <span itemprop="ratingValue">[rating]</span></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<!--END: user_reviews-->
+	</div>
+	<!--END: reviewsBlock-->
+
+
+
+      <!--START: errorMsg-->
+      <div class="errorMsg pad10 boxShadow">[errorMsg]
+        <div class="review-close-button">
+          <input type="button" value='Click here to continue' class="btn" onclick="history.back(1);" onmouseover="this.className='btn_over'" onmouseout="this.className='btn'" />
+        </div>
+      </div>
+      <!--END: errorMsg--> 
+</section>
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/fontello/css/fontello.min.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/assets/templates/common-core/css/listing.css" type="text/css" media="screen" />
+<!--END: template_styles-->
+
+<!--START: template_scripts-->
+
+<script type="text/javascript" src="/assets/templates/common-core/js/listing.js"></script>
+<!--END: template_scripts-->

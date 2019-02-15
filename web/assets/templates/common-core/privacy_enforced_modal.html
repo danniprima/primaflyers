@@ -1,0 +1,35 @@
+<aside id="divPolicy" class="modal text-left" tabindex="-1" role="dialog">    
+    <div class="modal-vcenter">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content ajax-modal-content">
+                <div class="modal-header">
+			        <h4 class="modal-title">[grpr_privacy-policy-header]</h4>
+		        </div>
+                <div class="modal-body">      
+                    <section class="col col-6">
+                        <div class="form-group">                            
+                            <input type="checkbox" name="gdpr_privacy_accepted" value="" id="gdpr_privacy_accepted" />
+                            <i></i>[grpr_privacy-policy-terms-label]
+                            <label class="small-label"><span class="required">*</span></label>
+                        </div>	
+                    </section>     
+                </div>
+                <div class="modal-footer">
+			        <button type="button" class="btn" onclick="policyAcceptanceContinue();">[grpr_privacy-policy-accept-btn]</button>
+		        </div>
+            </div>
+        </div>
+    </div>
+</aside>  
+<script>
+    function policyAcceptanceContinue() {
+        if (jQuery("#gdpr_privacy_accepted").is(':checked')) {
+            jQuery("#divPolicy").modal('hide');
+            mailing_list(document.mailing);
+        }
+        else {
+            alert(GetLanguagItem('gdpr_privacy-policy-validation-message'));
+            return;
+        }
+    }
+</script>

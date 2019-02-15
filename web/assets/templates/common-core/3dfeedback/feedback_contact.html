@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="language" content="en" />
+	<meta name="robots" content="none" />
+	<title>3dFeedback</title>
+
+	<link rel="stylesheet" href="assets/templates/common-core/lib/fontello/css/fontello.min.css" type="text/css" />
+	<link rel="stylesheet" href="assets/templates/common-core/lib/bootstrap/css/bootstrap.css" type="text/css" />
+	<link rel="StyleSheet" href="assets/templates/common-core/css/core.css" type="text/css" />
+	<link rel="StyleSheet" href="assets/templates/[template]/css/[stylesheet]" type="text/css" />
+	<link type="text/css" href="/assets/templates/common-core/3dfeedback/css/feedback.css" rel="stylesheet" />
+
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://code.jquery.com/jquery-migrate-3.0.1.min.js'></script>
+	<script src="assets/templates/common-core/lib/bootstrap/js/bootstrap.js"></script>
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<form id="feedback-form" action="feedback.asp?action=send2" method="post">
+<input type=hidden value="[feedbackid]" name=feedbackid>
+
+
+<div class="feedback3d-container">
+
+	<!--START: feedback_logo-->
+	<div><img src="[feedback_logo]"></div> 
+	<!--END: feedback_logo-->
+
+	<div><h3 style=" margin: 0 0 20px; ">[feedback_contact-question]</h3></div>
+	<div id="form_contact">
+
+		<div class="form-group">
+			<label>Name:</label>
+			<input id="fb-name" type="text" name="name" class="form-control" value="[name]">
+		</div>
+
+		<div class="form-group">
+			<label>Phone:</label>
+			<input id="fb-phone" type="text" name="phone" class="form-control" value="[phone]">
+		</div>
+
+		<div class="form-group">
+			<label>E-Mail:</label>
+			<input id="fb-email" type="text" name="email" class="form-control" value="[email]">
+		</div>
+
+		<div class="checkbox">
+			<label>
+				<input type="checkbox" name="subscribe" value="1" checked> &nbsp;Subscribe me to your newsletter.
+			</label>
+		</div>
+
+
+		<div class="clearfix">
+			<div class="pull-left">
+				<a href="http://www.3dcart.com/website-feedback-form.html"><img src="/assets/templates/common/3dfeedback/images/3dfeedback.png" border="0" style="margin-left:12px;"></a>
+			</div>
+			<div class="pull-right">
+				<input type="button" onClick="window.parent.closeParentModal();" class="btn btn-default" value="Cancel">
+				<input type="submit" class="btn btn-primary" value="Send">
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+</form>
+
+
+<script>
+
+   /* $(function () {
+
+        $('#feedback-form').submit(function (e) {
+        
+            var inputValid = false;
+            var message = "";
+
+            var name = $.trim($('#fb-name').val());
+            var phone = $.trim($('#fb-phone').val());
+            var email = $.trim($('#fb-email').val());
+
+            if (name != '' && phone != '' && email != '') {
+                inputValid = true;
+
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                if (!re.test(String(email).toLowerCase())) {
+                    inputValid = false;
+                }
+
+                var re2 = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+                if (!re2.test(String(phone).toLowerCase())) {
+                    inputValid = false;
+                }
+            }
+
+            if (!inputValid) {
+                alert('Please enter your correct name, phone, and email to continue.');
+                e.preventDefault();
+            }
+        });
+    }); */
+
+</script>
+</body>
+</html>

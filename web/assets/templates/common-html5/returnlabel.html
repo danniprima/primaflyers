@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Return Label</title>
+	<script>
+	function printLabel(){
+		document.getElementById("btnPrint").style= "display:none";
+		window.print();
+		document.getElementById("btnPrint").style= "display:block";
+	}
+	</script>
+</head>
+<body>
+<div>    
+    <input type="button" id="btnPrint" value="Print Return Label" class="btn" onclick="printLabel()" />
+	<img src="data:image/[imgtype];base64,[base64label]" alt="Return Label" width="1000"/>	
+</div>
+</body>
+</html>

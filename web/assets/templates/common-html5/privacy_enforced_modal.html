@@ -1,0 +1,26 @@
+<div id="divPolicy" style="display:none; padding: 2em;">
+    <h2>[grpr_privacy-policy-header]</h2>				
+    <div style="margin-top:20px;">	    
+        <label class="checkbox">
+            <input type="checkbox" name="gdpr_privacy_accepted" value="0" id="gdpr_privacy_accepted" class="form-control" />
+            <i></i><label class="small-label">[grpr_privacy-policy-terms-label]</label>
+        </label>					
+    </div>
+    <div class="clear"></div>
+    <div style="margin-top:30px;">
+        <button type="button" class="btn" onclick="policyAcceptanceContinue();">[grpr_privacy-policy-accept-btn]</button>	    
+    </div>	
+</div>
+<script>
+    function policyAcceptanceContinue() {
+
+        if (jQuery('#gdpr_privacy_accepted').is(':checked')) {
+            jQuery.modal.close();
+            document.mailing.submit();
+        }
+        else {
+            alert(GetLanguagItem('gdpr_privacy-policy-validation-message'));
+            return;
+        }
+    }
+</script>

@@ -1,0 +1,77 @@
+<section id="home" class="home-page-content page-content">
+    <section class="homepage-slider">
+        <div class="container-fluid">
+        	<div class="row">
+            <!--START: home_carousel-->
+            <div class="homeCarousel flexslider" data-animation="[hc_effect]" data-slideshowspeed="[hc_delay]">
+                <ul class="slides">
+                    <!--START: carousel-->
+                    <li><a href="[link]"><img src="[image]" alt="" /></a></li>
+                    <!--END: carousel-->
+                </ul>
+            </div>
+            <!--END: home_carousel-->
+            </div>
+        </div>
+    </section>
+
+    <!--START: CATEGORY_HEADER-->
+    <section class="category-header">[CONTENT]</section>
+    <!--END: CATEGORY_HEADER-->
+
+
+
+	<section class="promo-banners">
+		<div class="container">
+			<div class="row">
+                                 <div class="col-sm-6"><a href="/same-day-print" class="promo-img lazy"><img src="/assets/images/promos/promo6.jpg" class="img-responsive row3" alt="Same Day Print" /></a></div>
+                                 <div class="col-sm-6"><a href="https://www.primaflyers.com/FOIL_c_1704.html" class="promo-img lazy"><img src="/assets/images/promos/promo-foilv2.jpg" class="img-responsive row3" alt="Holiday"/></a></div>
+				<div class="col-sm-4"><a href="/posters" class="promo-img lazy"><img src="/assets/images/promos/promo3.jpg" class="img-responsive row2" alt="Posters" /></a></div>
+				<div class="col-sm-4"><a href="/wide-format" class="promo-img lazy"><img src="/assets/images/promos/promo4.jpg" class="img-responsive row2" alt="Wide Format" /></a></div>
+				<div class="col-sm-4"><a href="https://www.primaflyers.com/FLYERS_c_1087.html" class="promo-img lazy"><img src="/assets/images/promos/NexDayFlyers_001.jpg" class="img-responsive row2" alt="Music and Event Promotions" /></a></div>
+				<div class="col-sm-6"><a href="/business-cards" class="promo-img lazy"><img src="/assets/images/promos/promo1.jpg" class="img-responsive row1" alt="Business Cards" /></a></div>
+				<div class="col-sm-6"><a href="/postcards-flyers" class="promo-img lazy"><img src="/assets/images/promos/promo2.jpg" class="img-responsive row1" alt="Postcards / Flyers" /></a></div>
+				<div class="col-sm-12"><a href="/business-identity" class="promo-img lazy"><img src="/assets/images/promos/promo8.jpg" class="img-responsive row4" alt="Business Identity" /></a></div>
+			</div>
+		</div>
+	</section>
+   
+	<!--START: FEATURE_MENU-->
+    <section class="products-section">
+        <div class="container">
+            <h2 class="header-specials">[category_Header-specials]</h2>
+
+            <!--START: CATEGORY_ITEMS-->
+            <div class="product-items product-items-[product-cols-number]">
+                <!--START: ITEM_TEMPLATE_0-->
+                [product_items]
+                <!--END: ITEM_TEMPLATE_0-->
+            </div>
+            <!--END: CATEGORY_ITEMS-->
+        </div>
+    </section>
+	<!--END: FEATURE_MENU-->
+
+    <!--START: CATEGORY_FOOTER-->
+    <section class="category-footer">[CONTENT]</section>
+    <!--END: CATEGORY_FOOTER-->
+
+</section>
+
+<!--START: template_scripts-->
+<script type="text/javascript" src="/assets/templates/common-core/lib/flexslider/jquery.flexslider-min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    jQuery(function () {
+        jQuery('.homeCarousel').flexslider({
+            animation: jQuery(this).data('animation'),
+            slideshowSpeed: jQuery(this).data('slideshowSpeed'),
+            controlNav: false,
+            keyboard: false
+        });
+    });
+</script>
+<!--END: template_scripts-->
+
+<!--START: template_styles-->
+<link rel="stylesheet" href="/assets/templates/common-core/lib/flexslider/flexslider.css" type="text/css" media="screen" />
+<!--END: template_styles-->

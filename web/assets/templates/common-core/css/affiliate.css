@@ -1,0 +1,135 @@
+/*  Affiliate
+    --------------------------- */
+.table-titles {
+    text-transform: uppercase;
+} 
+
+.affiliate-section {
+    margin: 0 0 50px;
+}
+
+#affiliate .link-instructions {
+    border: 1px solid #e5e5e5;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#affiliate .affiliateBannersLink .text-area {
+    background: none;
+    padding: 0px;
+    resize: none;
+    margin-top: 20px;
+    width: 100%;
+    border: none;
+    overflow: auto;
+    outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+::selection {
+  background: #009ad3; /* WebKit/Blink Browsers */
+  color: #fff;
+}
+::-moz-selection {
+  background: #009ad3; /* Gecko Browsers */
+  color: #fff;
+}
+
+
+#affiliate .affiliateBannersLink .image {
+    margin: 20px 0px 0px;
+    max-height: 150px;
+    display: block;
+    max-width: 200px;
+}
+
+#affiliate .affiliateBannersLink .image img{
+    max-width: 100%;
+}
+
+#affiliate .copy-section {
+    max-width: 100%;
+    display: inline-block;
+    background: #fbfbfb;
+    border: 1px solid #e5e5e5;
+    padding: 0px 0px 0px 20px;
+    margin-top: 15px;
+    width: 90%;
+}
+
+
+#affiliate .affiliateBannersLink .button {
+    float: right;
+    position: relative;
+    cursor: pointer;
+}
+
+#affiliate .affiliateBannersLink .button:hover{
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+}
+
+.copied::after {
+    position: absolute;
+    top: 12%;
+    right: 110%;
+    display: block;
+    content: "copied";
+    font-size: 12px;
+    padding: 3px 5px;
+    color: #fff;
+    background-color: #777;
+    border-radius: 0;
+    opacity: 0;
+    will-change: opacity, transform;
+    animation: showcopied 1.5s ease;
+}
+
+@keyframes showcopied {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    70% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+    }
+}
+
+
+#affiliate .gc-code.commissionperc {
+    width: 100%;
+}
+
+#affiliate .ordernum {
+    width: 100%;
+}
+
+@media (max-width: 1199px) {
+    #affiliate .copy-section{
+        width: 100%
+    }
+}
+
+@media (max-width: 991px) {
+    .row.details_row {
+	    padding: 10px 0;
+	    margin: 15px auto;
+	    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+	    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    }
+    .row.details_row:nth-child(2n) {
+	    background: #EAE9E9;
+	    background: rgba(234, 233, 233, 0.3);
+	    background-color: #EAE9E9;
+	    background-color: rgba(234, 233, 233, 0.3);
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9);
+	    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99EAE9E9, endColorstr=#99EAE9E9)";
+    }
+}

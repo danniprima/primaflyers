@@ -1,0 +1,62 @@
+<table width="98%" cellspacing="0" cellpadding="2" border="0">
+  <!--START: CATEGORY_HEADER-->
+  <tr>
+    <td class="data">[CONTENT]</td>
+  </tr>
+  <!--END: CATEGORY_HEADER-->
+  <!--START: FEATURE_MENU-->
+  <tr>
+    <td class="titles" height="30"><b>[category_Header-specials]</b></td>
+  </tr>
+  <tr>
+    <td align="center"><table border="0" cellspacing="0" cellpadding="5" width="100%" align="center">
+        <!--START: CATEGORY_ITEMS-->
+        <!--START: ITEM_TEMPLATE_0-->
+        <table cellspacing="0" cellpadding="5" border="0" width="99%" class="alternative">
+          <tr>
+            <td align="center" height="150"><a href="product.asp?itemid=[catalogid]"><img src="thumbnail.asp?file=[THUMBNAIL]&maxx=0&maxy=150" alt="[name]" border="0"></a></td>
+          </tr>
+          <tr>
+            <td class="item" align="center" height="60"><a href="product.asp?itemid=[catalogid]">[name]</a></td>
+          </tr>
+          <tr>
+            <td class="price-info" valign="top" align="center"><!--START: ITEMPRICE-->
+              <b>[product_yourprice]&nbsp;</b><span class="price">[ITEMPRICE]</span>
+              <!--END: ITEMPRICE-->
+              <!--START: SALEPRICE-->
+              <table cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="price-info" nowrap="nowrap"><b>[product_yourprice]&nbsp;</b><s>[ITEMPRICE]</s></td>
+                </tr>
+                <tr>
+                  <td valign="top" nowrap="nowrap" class="price-info"><b>[product_onsale]:&nbsp;</b><span class="price">[ITEMSALEPRICE]</span></td>
+                  <td>&nbsp;<img src="assets/templates/common/images/on_sale.png" /></td>
+                </tr>
+              </table>
+              <!--END: SALEPRICE--></td>
+          </tr>
+          <!--START: product_review-->
+          <tr>
+            <td class="price-info" valign="top" colspan="2" align="center"><!--START: product_review_average-->
+              <img src="assets/templates/common/images/star[review_average].png" align="absmiddle">&nbsp;[review_count]&nbsp;Review(s)
+              <!--END: product_review_average--></td>
+          </tr>
+          <!--END: product_review-->
+          <tr>
+            <td class="item" align="center" valign="middle"><input  type="button" value="[category_buyitlink]" onClick="window.location='add_cart.asp?quick=1&amp;item_id=[catalogid]'" class="btn" onMouseOver="this.className='btn_over'" onMouseOut="this.className='btn'"></td>
+          </tr>
+        </table>
+        <!--END: ITEM_TEMPLATE_0-->
+        <!--END: CATEGORY_ITEMS-->
+      </table></td>
+  </tr>
+  <!--END: FEATURE_MENU-->
+  <!--START: CATEGORY_FOOTER-->
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td class="data">[CONTENT]</td>
+  </tr>
+  <!--END: CATEGORY_FOOTER-->
+</table>

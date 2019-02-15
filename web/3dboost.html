@@ -1,0 +1,94 @@
+<div id="[popup_id]" class="slickModal">
+
+    <div class="window">
+        <!--START: POPUP_IMAGE-->
+        <div class="imagetype"><a href="[calltoactionurl]"><img src="[embedimage]" alt="" /></a></div>
+        <!--END: POPUP_IMAGE-->
+
+        <!--START: POPUP_TEXT-->
+        <style>
+			#[popup_id].slickModal .close.icon:after, .slickModal .close.icon:before {
+				background:[textcolor];
+			}
+            #[popup_id].upsell_text .window .wrap:after {
+                border-color: [bgcolor] transparent transparent; 
+				position: absolute;
+				top: auto;
+				bottom: -10px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 10px 25px 0;
+				z-index: 10;
+				display: block;
+				content: "";
+				color:[bgcolor];
+            }
+			#[popup_id].upsell_text .popup-title{
+				font-size:[headlinefontsize]px;
+				padding:20px 0;
+				color:[textcolor];
+			}
+			#[popup_id].upsell_text .wrap{
+				background:[bgcolor];
+				width: 100%;
+				position: relative;
+				top: 0;
+				left: 0;
+			}
+			#[popup_id].upsell_text .popup-message{
+				font-size:13px;
+				color:[textcolor];
+				line-height:26px;
+			}
+			#[popup_id].upsell_text .popup-text-btn a{
+				color:[buttontextcolor];
+				background:[buttonbgcolor];
+				font-weight: 900;
+				font-size: 14px;
+				text-align: center;
+				padding: 12px 36px;
+				letter-spacing: 1px;
+			}
+			#[popup_id].upsell_text .popup-text-btn a:hover{
+				color:[buttontextcolor];
+				opacity:.7;
+				text-decoration:none;
+			}
+			#[popup_id].upsell_text .popup-text-btn {
+				background: #fff;
+				position: relative;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				padding: 40px 0;
+			}
+        </style>
+		<div class="text_Upsell">
+            <div class="wrap">
+                <h1 class="popup-title">[headlinetext]</h1>
+                <div class="popup-message">[popuphtml]</div>
+            </div>
+            <div class="popup-text-btn">
+                <a href="[calltoactionurl]">[calltoactiontext]</a>
+            </div>
+        </div>
+        <!--END: POPUP_TEXT-->
+
+        <!--START: POPUP_IFRAME-->
+        <style>
+            #iframe3dboost-[id] iframe {
+                width: [popwidth]px !important;
+                height: [popheight]px !important;
+                max-width: 100%;
+            }
+        </style>
+        <div id="iframe3dboost-[id]" class="embedtool">[popuphtml]</div>
+        <!--END: POPUP_IFRAME-->
+
+
+    </div>
+</div>

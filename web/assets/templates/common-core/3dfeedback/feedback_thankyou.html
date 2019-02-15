@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+	<meta name="language" content="en" />
+	<meta name="robots" content="none" />
+	<title>3dFeedback</title>
+	<link type="text/css" href="/assets/templates/common-core/3dfeedback/css/feedback.css" rel="stylesheet" />
+
+</head>
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+
+<form action="feedback.asp?action=send2" method="post">
+<input type=hidden value="[feedbackid]" name=feedbackid>
+
+<div class="feedback3d-container">
+	<!--START: feedback_logo-->
+	<div><img src="[feedback_logo]"></div> 
+	<!--END: feedback_logo-->
+
+	<div id="thankyou">[feedback_thank-you]</div>
+</div>
+
+
+
+</form>
+
+<script language="javascript">
+    setTimeout('self.close();', 5000);
+</script>
+</body>
+</html>
